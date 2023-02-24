@@ -1,12 +1,10 @@
-import React from "react";
-import Rooms from "../components/Rooms";
+import React from 'react';
+import Rooms from '../components/Rooms';
 
-const Roomspage = () => {
-  return (
-    <>
-      <Rooms />
-    </>
-  );
-}
+const Roomspage = () => (
+  <>
+    <Rooms />
+  </>
+);
 
 export default Roomspage;

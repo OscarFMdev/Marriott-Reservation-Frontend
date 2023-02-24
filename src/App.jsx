@@ -5,19 +5,16 @@ import Roomspage from './pages/Roomspage';
 import Reservationspage from './pages/Reservationspage';
 import './App.css';
 
-const App = () => {
+const App = () => (
+  <main className="App">
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/rooms" element={<Roomspage />} />
+      <Route path="/reservation" element={<Reservationspage />} />
+    </Routes>
+  </main>
 
-  return (    
-      <main className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/rooms" element={<Roomspage />} />
-          <Route path="/reservation" element={<Reservationspage />} />
-        </Routes>
-      </main>
-    
-  );
-};
+);
 
 export default App;

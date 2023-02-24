@@ -1,1 +1,1 @@
-/*Here will be all room reducers*/
+/* Here will be all room reducers */
