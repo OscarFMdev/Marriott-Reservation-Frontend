@@ -2,8 +2,11 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Roomspage from './pages/Roomspage';
-import Reservationspage from './pages/Reservationspage';
+import Bookingpage from './pages/Bookingpage';
 import './App.css';
+import MyBookingspage from './pages/Mybookingspage';
+import AddRoompage from './pages/AddRoompage';
+import DeleteRoompage from './pages/DeleteRoompage';
 
 const App = () => (
   <main className="App">
@@ -11,7 +14,10 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/rooms" element={<Roomspage />} />
-      <Route path="/reservation" element={<Reservationspage />} />
+      <Route path="/booking" element={<Bookingpage />} />
+      <Route path="/mybookings" element={<MyBookingspage />} />
+      <Route path="/addroom" element={<AddRoompage />} />
+      <Route path="/deleteroom" element={<DeleteRoompage />} />
     </Routes>
   </main>
 );

@@ -31,11 +31,20 @@ const NavBar = () => {
         <NavLink to="/" style={handleActive} className={navbar.link} onClick={toggleMenu}>
           Home
         </NavLink>
-        <NavLink to="/Rooms" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+        <NavLink to="/rooms" style={handleActive} className={navbar.link} onClick={toggleMenu}>
           Rooms
         </NavLink>
-        <NavLink to="/Reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-          Reservation
+        <NavLink to="/booking" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+          Booking
+        </NavLink>
+        <NavLink to="/mybookings" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+          My bookings
+        </NavLink>
+        <NavLink to="/addroom" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+          Add room
+        </NavLink>
+        <NavLink to="/deleteroom" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+          Delete room
         </NavLink>
       </div>
     </nav>
