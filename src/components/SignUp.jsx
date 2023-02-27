@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
-import { signUpUser } from '../redux/loginSlice';
+import { signUpUser } from '../redux/signUpSlice';
 
 const SignUp = () => {
   const [fullName, setFullName] = useState('');
