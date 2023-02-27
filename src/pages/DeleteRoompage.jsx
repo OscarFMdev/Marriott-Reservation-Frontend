@@ -1,5 +1,5 @@
 import React from 'react';
-import DeleteRoom from '../components/DeleteRoom';
+import DeleteRoom from '../components/DeleteRoom';  // eslint-disable-line
 
 const DeleteRoompage = () => (
   <>
