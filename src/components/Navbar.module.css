@@ -77,7 +77,7 @@
   padding: 10px 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .menuIcon {
     display: none;
   }
@@ -103,5 +103,12 @@
   .link {
     width: 100%;
     padding: 10px 0;
+  }
+}
+
+
+@media only screen and (orientation: landscape) {
+  .link {
+    margin-top: 0;
   }
 }

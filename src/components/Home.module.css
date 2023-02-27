@@ -1,7 +1,7 @@
 :root {
   --green: #95c010;
   --orange: #ffb400;
-  --blue: #11bbb5;
+--blue: #11bbb5;
 }
 
 .background {
@@ -35,6 +35,7 @@
   line-height: 31px;
   letter-spacing: 0.15em;
   width: 100vw;
+  margin-bottom: 20px;
 }
 
 .loginBtn,
@@ -51,18 +52,19 @@
 }
 
 .loginBtn {
-  top: 48%;
+  top: 55%;
   background: var(--green);
   border-radius: 79px;
 }
 
 .signupBtn {
-  top: 55%;
+  top: 60%;
   background: var(--blue);
   border-radius: 79px;
+  margin-top: 30px;
 }
 
-@media (min-width: 744px) {
+@media (min-width: 800px) {
   .hotel {
     top: 63%;
     left: 50%;
@@ -71,5 +73,24 @@
 
   .header {
     font-size: 40px;
+  }
+
+  .loginBtn {
+    top: 48%;
+  }
+
+  .signupBtn {
+    top: 55%;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .header {
+    top: 25%;
+  }
+
+  .signupBtn {
+    top: 66%;
   }
 }

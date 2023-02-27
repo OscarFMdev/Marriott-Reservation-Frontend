@@ -28,9 +28,6 @@ const NavBar = () => {
       </div>
       <div className={`${navbar.menuItems} ${isOpen ? navbar.open : ''}`}>
         <img src={logo} alt="Logo" className={navbar.logo} />
-        <NavLink to="/" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-          Home
-        </NavLink>
         <NavLink to="/rooms" style={handleActive} className={navbar.link} onClick={toggleMenu}>
           Rooms
         </NavLink>
