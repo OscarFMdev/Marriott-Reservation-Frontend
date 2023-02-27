@@ -7,14 +7,13 @@ import './App.css';
 
 const App = () => (
   <main className="App">
-    <Navbar />
+    {window.location.pathname !== '/' && <Navbar />}
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/rooms" element={<Roomspage />} />
       <Route path="/reservation" element={<Reservationspage />} />
     </Routes>
   </main>
-
 );
 
 export default App;
