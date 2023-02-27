@@ -33,17 +33,16 @@ const signUpSlice = createSlice({
     [signUpUser.fulfilled]: (state, { payload: { msg, error } }) => {
       const s = state;
       s.loading = false;
-      if(error){
+      if (error) {
         s.error = error;
-      }
-      else{
+      } else {
         s.msg = msg;
-      }          
+      }
     },
     [signUpUser.rejected]: (state) => {
       const s = state;
       s.loading = true;
-    }
+    },
   },
 });
 

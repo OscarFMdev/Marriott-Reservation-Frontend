@@ -13,8 +13,9 @@ const SignUp = () => {
   const dispatch = useDispatch();
 
   const handleSignUp = () => {
-    console.table(fullName, email, password, confirmPassword);
-    dispatch(signUpUser({ fullName, email, password, confirmPassword }));    
+    dispatch(signUpUser({
+      fullName, email, password, confirmPassword,
+    }));
   };
 
   return (
