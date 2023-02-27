@@ -19,6 +19,19 @@ const NavBar = () => (
       >
         Home
       </NavLink>
+
+      <NavLink
+        to="/Login"
+        style={handleActive}
+      >
+        Login
+      </NavLink>
+      <NavLink
+        to="/SignUp"
+        style={handleActive}
+      >
+        SignUp
+      </NavLink>
       <NavLink
         to="/Rooms"
         style={handleActive}
@@ -31,6 +44,7 @@ const NavBar = () => (
       >
         Reservation
       </NavLink>
+
     </nav>
   </header>
 );
