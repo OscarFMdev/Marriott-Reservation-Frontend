@@ -86,21 +86,21 @@
   }
 
   .logo {
-    position: absolute;
-    top: 10px;
-    left: 100px;
+    margin: 50px 0;
   }
 
   .menuItems {
     height: 100vh;
     width: 240px;
     left: 0;
-    justify-content: center;
+    justify-content: flex-start;
     transition: none;
     background-color: white;
   }
 
   .link {
-    margin-left: 2rem;
+   width: 100%;
+   padding: 10px 0;
   }
+  
 }
