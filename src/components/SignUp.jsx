@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { useDispatch } from 'react-redux';
+import { signUpUser } from '../redux/loginSlice';
 
 const SignUp = () => {
   const [fullName, setFullName] = useState('');
@@ -8,8 +10,11 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleSignUp = () => {
     console.table(fullName, email, password, confirmPassword);
+    dispatch(signUpUser({ fullName, email, password, confirmPassword }));    
   };
 
   return (
