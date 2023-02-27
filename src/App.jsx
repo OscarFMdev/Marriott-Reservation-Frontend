@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage';
 import Roomspage from './pages/Roomspage';
 import Bookingpage from './pages/Bookingpage';
 import './App.css';
-import MyBookingspage from './pages/Mybookingspage';
+import MyBookingspage from './pages/Mybookingspage.jsx';
 import AddRoompage from './pages/AddRoompage';
 import DeleteRoompage from './pages/DeleteRoompage';
 
