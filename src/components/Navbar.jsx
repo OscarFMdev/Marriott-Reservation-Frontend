@@ -38,13 +38,6 @@ const NavBar = () => (
       >
         Rooms
       </NavLink>
-      <NavLink
-        to="/Reservation"
-        style={handleActive}
-      >
-        Reservation
-      </NavLink>
-
     </nav>
   </header>
 );
