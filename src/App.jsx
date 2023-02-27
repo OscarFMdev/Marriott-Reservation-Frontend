@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage';
 import Roomspage from './pages/Roomspage';
 import Bookingpage from './pages/Bookingpage';
 import './App.css';
-import MyBookingspage from './pages/Mybookingspage';  // eslint-disable-line
+import MyBookingspage from './pages/MyBookingspage';
 import AddRoompage from './pages/AddRoompage';
 import DeleteRoompage from './pages/DeleteRoompage';
 
