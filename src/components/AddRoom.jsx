@@ -6,4 +6,4 @@ const AddRoom = () => (
   </div>
 );
 
-export default AddRoom
+export default AddRoom;

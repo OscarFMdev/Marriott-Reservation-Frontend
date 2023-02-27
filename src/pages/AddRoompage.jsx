@@ -1,5 +1,5 @@
-import React from 'react'
-import AddRoom from '../components/AddRoom'
+import React from 'react';
+import AddRoom from '../components/AddRoom';
 
 const AddRoompage = () => (
   <>
@@ -7,4 +7,4 @@ const AddRoompage = () => (
   </>
 );
 
-export default AddRoompage
+export default AddRoompage;

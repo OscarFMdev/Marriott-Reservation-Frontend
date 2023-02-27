@@ -6,4 +6,4 @@ const DeleteRoom = () => (
   </div>
 );
 
-export default DeleteRoom
+export default DeleteRoom;

@@ -1,5 +1,5 @@
-import React from 'react'
-import DeleteRoom from '../components/DeleteRoom'
+import React from 'react';
+import DeleteRoom from '../components/DeleteRoom';
 
 const DeleteRoompage = () => (
   <>
@@ -7,4 +7,4 @@ const DeleteRoompage = () => (
   </>
 );
 
-export default DeleteRoompage
+export default DeleteRoompage;
