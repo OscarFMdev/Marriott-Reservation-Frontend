@@ -4,10 +4,10 @@ import Homepage from './pages/Homepage';
 import Loginpage from './pages/Loginpage';
 import SignUpPage from './pages/SignUpPage';
 import Roomspage from './pages/Roomspage';
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import '/node_modules/primeflex/primeflex.css'
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import '/node_modules/primeflex/primeflex.css';
 
 import './App.css';
 
