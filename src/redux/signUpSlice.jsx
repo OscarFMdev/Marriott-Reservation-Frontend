@@ -1,15 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  msg: '',
-  user: '',
-  token: '',
-  loading: false,
-  error: '',
+  user: {
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+  },
+  message: '',
+  is_success: true,
 };
 
 const signUpUser = createAsyncThunk('userSignUp', async (body) => {
-  const response = await fetch('http://localhost:3000/signup', {
+  const response = await fetch('http://localhost:3000/api/v1/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
