@@ -21,14 +21,14 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-column align-items-center">
-      <h1>Sign Up</h1>      .
+      <h1>SignUp</h1>      .
       <InputText placeholder="Full Name" value={fullName} required onChange={(e) => setFullName(e.target.value)} />
       <InputText placeholder="Email" type="email" value={email} required onChange={(e) => setEmail(e.target.value)} />
       <Password placeholder="Password" value={password} required onChange={(e) => setPassword(e.target.value)} />
       <Password placeholder="Confirm Password" value={confirmPassword} required onChange={(e) => setConfirmPassword(e.target.value)} />
       
      
-      <Button onClick={handleSignUp}>Sign Up</Button>
+      <Button label="SignUp" className="p-button-success" onClick={handleSignUp} />
     </div>
   );
 };
