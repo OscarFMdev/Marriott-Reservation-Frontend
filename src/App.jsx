@@ -9,17 +9,21 @@ import AddRoompage from './pages/AddRoompage';
 import DeleteRoompage from './pages/DeleteRoompage';
 
 const App = () => (
-  <main className="App">
-    {window.location.pathname !== '/' && <Navbar />}
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/rooms" element={<Roomspage />} />
-      <Route path="/booking" element={<Bookingpage />} />
-      <Route path="/mybookings" element={<MyBookingspage />} />
-      <Route path="/addroom" element={<AddRoompage />} />
-      <Route path="/deleteroom" element={<DeleteRoompage />} />
-    </Routes>
-  </main>
+  <div className="container">
+    <div className="sidebar">
+      <Navbar />
+    </div>
+    <main className="content">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/rooms" element={<Roomspage />} />
+        <Route path="/booking" element={<Bookingpage />} />
+        <Route path="/mybookings" element={<MyBookingspage />} />
+        <Route path="/addroom" element={<AddRoompage />} />
+        <Route path="/deleteroom" element={<DeleteRoompage />} />
+      </Routes>
+    </main>
+  </div>
 );
 
 export default App;
