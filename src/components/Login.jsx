@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
+import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/loginSlice';
@@ -13,11 +14,11 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-column">
+    <div className="flex flex-column align-items-center">
       <h1>Login User</h1>
       <InputText placeholder="Email" required type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <InputText placeholder="Password" required type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <Button onClick={handleLogin}>Login</Button>
+      <Password weakLabel="Weak" mediumLabel="Medium" strongLabel="Strong" placeholder="Password" required type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <Button label="Login" className="p-button-success" />
     </div>
 
   );
