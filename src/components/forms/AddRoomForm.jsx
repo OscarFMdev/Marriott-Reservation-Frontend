@@ -7,13 +7,15 @@ const AddRoomForm = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [roomType, setRoomType] = useState('');
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/v1/rooms', {
+
+    const response = await fetch('http://127.0.0.1:3000/api/v1/rooms', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         room: {
@@ -22,18 +24,19 @@ const AddRoomForm = () => {
           description,
           price,
           room_type: roomType,
-          jwt,
         },
       }),
     });
-    const data = await response.json();
+    return response.json();
   };
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
       <h1>Add Room</h1>
       <div className={form.field}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">
+          Name:
+        </label>
         <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
       </div>
       <div className={form.field}>

@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const signUpUser = createAsyncThunk('userSignUp', async (body) => {
-  const response = await fetch('http://localhost:3000/api/v1/', {
+  const response = await fetch('http://127.0.0.1:3000/api/v1/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
