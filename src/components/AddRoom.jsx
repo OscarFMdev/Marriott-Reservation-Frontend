@@ -1,8 +1,10 @@
 import React from 'react';
+import AddRoomForm from './forms/AddRoomForm';
 
 const AddRoom = () => (
-  <div>
+  <div className='page'>
     <h1>Add room</h1>
+    <AddRoomForm />
   </div>
 );
 
