@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { Password } from 'primereact/password';
+import { loginUser } from '../redux/loginSlice';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/v1/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    dispatch(loginUser({
+      user: {
+        email,
+        password,
       },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    console.log(data);
+    }));
   };
 
   return (
-
     <div className="p-grid p-justify-center">
       <div className="p-col-12 p-md-8 p-lg-6">
         <div className="card">
@@ -32,23 +32,26 @@ const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                label="Email"
                 placeholder="Email"
               />
             </div>
+
             <div className="p-field">
-              <InputText
+              <Password
                 id="password"
-                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
               />
             </div>
-            <Button label="Login" type="submit" />
+
+            <Button type="submit" label="Login" />
           </form>
         </div>
       </div>
     </div>
   );
 };
+
 export default Login;
