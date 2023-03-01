@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../assets/img/marriot-wobg.png';
 import home from './Home.module.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div className={home.background}>
