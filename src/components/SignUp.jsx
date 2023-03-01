@@ -9,7 +9,6 @@ const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -19,7 +18,6 @@ const SignUp = () => {
         name,
         email,
         password,
-        passwordConfirmation,
       },
     }));
   };
@@ -61,14 +59,6 @@ const SignUp = () => {
               />
             </div>
 
-            <div className="p-field">
-              <Password
-                id="password_confirmation"
-                value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-                placeholder="Password Confirmation"
-              />
-            </div>
             <Button label="Sign Up" type="submit" />
           </form>
         </div>
