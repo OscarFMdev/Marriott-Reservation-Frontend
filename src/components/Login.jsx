@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useSignIn } from 'react-auth-kit'
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
 import { loginUser } from '../redux/loginSlice';
 
+
 const Login = () => {
+  const signIn = useSignIn()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -18,7 +21,7 @@ const Login = () => {
         password,
       },
     }));
-  };
+  };  
 
   return (
     <div className="p-grid p-justify-center">
