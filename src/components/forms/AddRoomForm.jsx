@@ -7,7 +7,7 @@ const AddRoomForm = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [roomType, setRoomType] = useState('');
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
