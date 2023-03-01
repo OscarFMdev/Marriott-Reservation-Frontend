@@ -14,6 +14,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .field,
 .fieldBook {
   display: flex;
@@ -32,10 +33,9 @@
 .field select,
 .field input[type="text"],
 .field input[type="number"],
-.field select,
 .fieldBook input[type="date"],
 .fieldBook input[type="text"],
-.fieldBook select{
+.fieldBook select {
   height: 5vh;
   border-radius: 10px;
   border-style: none;
