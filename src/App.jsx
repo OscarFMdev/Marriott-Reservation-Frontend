@@ -14,7 +14,6 @@ import './App.css';
 import MyBookingspage from './pages/MyBookingspage';
 import AddRoompage from './pages/AddRoompage';
 import DeleteRoompage from './pages/DeleteRoompage';
-import { AuthProvider } from 'react-auth-kit'
 
 const App = () => (
 
@@ -23,11 +22,6 @@ const App = () => (
       {window.location.pathname !== '/' && <Navbar />}
     </div>
     <main className="content">
-    <AuthProvider authType = {'cookie'}
-                  authName={'_auth'}
-                  cookieDomain={window.location.hostname}
-                  cookieSecure={window.location.protocol === "https:"}>
-
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Loginpage />} />
@@ -40,7 +34,6 @@ const App = () => (
           <Route path="/deleteroom" element={<DeleteRoompage />} />
         </Route>
       </Routes>
-      </AuthProvider>
     </main>
   </div>
 
