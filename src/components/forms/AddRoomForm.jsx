@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import form from './Form.module.css'
+import form from './Form.module.css';
 
 const AddRoomForm = () => {
   const [name, setName] = useState('');
@@ -22,7 +22,7 @@ const AddRoomForm = () => {
           description,
           price,
           room_type: roomType,
-          jwt
+          jwt,
         },
       }),
     });

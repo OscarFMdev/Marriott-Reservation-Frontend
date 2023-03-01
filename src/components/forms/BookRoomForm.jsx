@@ -6,36 +6,36 @@ function ReservationForm() {
   const [formData, setFormData] = useState({
     hotelId: '',
     startDate: '',
-    endDate: ''
+    endDate: '',
   });
 
   useEffect(() => {
     fetch('http://localhost:3000/api/v1/rooms')
-      .then(response => response.json())
-      .then(data => setHotels(data))
-      .catch(error => console.error(error));
+      .then((response) => response.json())
+      .then((data) => setHotels(data))
+      .catch((error) => console.error(error));
   }, []);
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const bookingData = {
       room_id: formData.hotelId,
       start_date: formData.startDate,
-      end_date: formData.endDate
+      end_date: formData.endDate,
     };
     fetch('http://127.0.0.1:3000/api/v1/users/6/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ booking: bookingData })
+      body: JSON.stringify({ booking: bookingData }),
     })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -49,7 +49,7 @@ function ReservationForm() {
           onChange={handleInputChange}
         >
           <option value="">-- Select a hotel --</option>
-          {hotels.map(hotel => (
+          {hotels.map((hotel) => (
             <option key={hotel.id} value={hotel.id}>
               {hotel.name}
             </option>

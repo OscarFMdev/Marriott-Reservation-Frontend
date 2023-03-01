@@ -1,5 +1,5 @@
 import React from 'react';
-import BookRoomForm from './forms/BookRoomForm'
+import BookRoomForm from './forms/BookRoomForm';
 
 const Booking = () => (
   <div>
