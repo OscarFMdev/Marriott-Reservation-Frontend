@@ -6,16 +6,18 @@ const initialState = {
 };
 
 const loginUser = createAsyncThunk('user', async (body) => {
-  const response = await fetch('http://127.0.0.1:3000/api/v1/login', {
+  await fetch('http://127.0.0.1:3000/api/v1/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Autorization: localStorage.getItem('token'),
     },
     body: JSON.stringify(body),
+  }).then((res) => {
+    if (res.ok) {
+      localStorage.setItem('token', res.headers.get('Authorization'));
+    }
+    return res.text().then((text) => Promise.reject(text));
   });
-
-  return response.json();
 });
 
 const loginSlice = createSlice({
@@ -40,8 +42,6 @@ const loginSlice = createSlice({
       const s = state;
       s.loading = false;
       s.user = user;
-      localStorage.setItem('token', user.jti);
-      localStorage.setItem('user', JSON.stringify(user));
     },
     [loginUser.rejected]: (state) => {
       const s = state;
