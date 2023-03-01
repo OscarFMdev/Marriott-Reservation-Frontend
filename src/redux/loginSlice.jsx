@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: '',
-  token: '',
+  user: '',  
   loading: false,
 
 };
@@ -26,7 +25,7 @@ const loginSlice = createSlice({
   reducers: {
     addToken: (state) => {
       const s = state;
-      s.token = localStorage.getItem('token');
+      s.user.jti = localStorage.getItem('token');
     },
     addUser: (state) => {
       const s = state;
@@ -38,12 +37,11 @@ const loginSlice = createSlice({
       const s = state;
       s.loading = true;
     },
-    [loginUser.fulfilled]: (state, { payload: { user, token } }) => {
+    [loginUser.fulfilled]: (state, { payload: { user } }) => {
       const s = state;
-      s.loading = false;
-      s.token = token;
-      s.user = user;
-      localStorage.setItem('token', JSON.stringify(token));
+      s.loading = false;      ;
+      s.user = user;      
+      localStorage.setItem('token', user.jti);
       localStorage.setItem('user', JSON.stringify(user));
     },
     [loginUser.rejected]: (state) => {

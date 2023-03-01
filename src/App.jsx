@@ -7,7 +7,7 @@ import Roomspage from './pages/Roomspage';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import '../../../../../node_modules/primeflex/primeflex.css';
+import '/node_modules/primeflex/primeflex.css';
 import Bookingpage from './pages/Bookingpage';
 import './App.css';
 import MyBookingspage from './pages/MyBookingspage';
