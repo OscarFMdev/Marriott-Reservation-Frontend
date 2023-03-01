@@ -1,0 +1,58 @@
+:root {
+  --green: #95c010;
+  --orange: #ffb400;
+  --blue: #11bbb5;
+}
+
+.formContainer {
+  background-color: var(--green);
+  height: 80vh;
+  margin: 0 5vw;
+  color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.field,
+.fieldBook {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.fieldBook {
+  margin-top: 5vh;
+}
+
+.fieldBook:last-of-type {
+  margin-bottom: 5vh;
+}
+
+.field select,
+.field input[type="text"],
+.field input[type="number"],
+.field select,
+.fieldBook input[type="date"],
+.fieldBook input[type="text"],
+.fieldBook select{
+  height: 5vh;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.field textarea {
+  border-radius: 20px;
+  height: 10vh;
+}
+
+.formContainer button[type="submit"] {
+  background-color: #252525;
+  color: white;
+  width: 50%;
+  height: 55px;
+  border-radius: 18px;
+  font-size: 15px;
+  margin-top: 20px;
+  border-style: none;
+}
