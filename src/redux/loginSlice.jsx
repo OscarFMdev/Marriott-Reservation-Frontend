@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: '',  
+  user: '',
   loading: false,
 
 };
@@ -39,8 +39,8 @@ const loginSlice = createSlice({
     },
     [loginUser.fulfilled]: (state, { payload: { user } }) => {
       const s = state;
-      s.loading = false;      ;
-      s.user = user;      
+      s.loading = false;
+      s.user = user;
       localStorage.setItem('token', user.jti);
       localStorage.setItem('user', JSON.stringify(user));
     },
