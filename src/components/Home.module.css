@@ -29,6 +29,7 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 20px;
@@ -64,6 +65,16 @@
   margin-top: 30px;
 }
 
+@media only screen and (orientation: landscape) {
+  .header {
+    top: 25%;
+  }
+
+  .signupBtn {
+    top: 66%;
+  }
+}
+
 @media (min-width: 800px) {
   .hotel {
     top: 63%;
@@ -76,21 +87,11 @@
   }
 
   .loginBtn {
+    top: 40%;
+  }
+
+  .signupBtn {
     top: 48%;
-  }
-
-  .signupBtn {
-    top: 55%;
     margin-top: 0;
-  }
-}
-
-@media only screen and (orientation: landscape) {
-  .header {
-    top: 25%;
-  }
-
-  .signupBtn {
-    top: 66%;
   }
 }
