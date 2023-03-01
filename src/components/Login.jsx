@@ -4,9 +4,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
-import { signIn } from '../redux/reducer/Auth/auth';
+import { loginUser } from '../redux/loginSlice';
 
 const Login = () => {
+  const signIn = useSignIn()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -15,18 +16,13 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = {
-      email,
-      password,
-    };
-    dispatch(signIn(user));
+    dispatch(loginUser({
+      user: {
+        email,
+        password,
+      },
+    }));
   };
-
-  useEffect(() => {
-    if (message === 'Logged in succesfully.') {
-      navigate('/rooms');
-    }
-  }, [message, navigate]);
 
   return (
     <div className="p-grid p-justify-center">
