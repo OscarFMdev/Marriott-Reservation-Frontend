@@ -11,7 +11,7 @@ import DeleteRoompage from './pages/DeleteRoompage';
 const App = () => (
   <div className="container">
     <div className="sidebar">
-      <Navbar />
+      {window.location.pathname !== '/' && <Navbar />}
     </div>
     <main className="content">
       <Routes>
