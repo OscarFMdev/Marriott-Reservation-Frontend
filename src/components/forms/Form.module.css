@@ -66,22 +66,37 @@
 .field select,
 .field input[type="text"],
 .field input[type="number"],
+.field textarea,
 .fieldBook input[type="date"],
 .fieldBook input[type="text"],
 .fieldBook select {
-  height: 5vh;
+  height: 35px;
   border-radius: 10px;
   background-color: var(--green);
   border: solid white 1px;
   color: white;
   width: 200px;
+  padding-left: 12px;
 }
 
 .field textarea {
   border-radius: 20px;
   height: 10vh;
 }
+input::placeholder,
+textarea::placeholder {
+  color: rgb(225, 225, 225);
+}
 
+.field input[type="text"]:focus,
+.field input[type="number"]:focus,
+.field textarea:focus,
+.fieldBook input[type="date"]:focus,
+.fieldBook input[type="text"]:focus {
+  color: black;
+  background-color: white;
+  transition: ease-in 0.5s;
+}
 .formContainer button[type="submit"] {
   width: 180px;
   background-color: white;
@@ -91,6 +106,13 @@
   margin-top: 6px;
   border-radius: 18px;
   border-style: none;
+}
+
+.formContainer button[type="submit"]:hover {
+  background-color: var(--blue);
+  color: white;
+  transition: ease-in 0.5s;
+  border: 1px dotted white;
 }
 
 @media screen and (min-width: 800px) {
