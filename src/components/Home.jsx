@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../assets/img/marriot-wobg.png';
+import img from '../assets/img/marriott-wobg.png';
 import home from './Home.module.css';
 
 const Home = () => (
