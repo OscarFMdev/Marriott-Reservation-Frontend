@@ -5,14 +5,47 @@
 }
 
 .formContainer {
-  background-color: var(--green);
-  height: 80vh;
-  margin: 0 5vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #95c010;
+  height: 100vh;
   color: white;
-  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.header {
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+.details {
+  margin: 10px 10vw;
+  font-size: 14px;
+}
+
+.formContainer > *:not(.hotel) {
+  z-index: 2;
+}
+
+.hotel {
+  background-image: url('../../assets/img/hotel-room-2.webp');
+  background-position: center;
+  position: absolute;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  opacity: 0.4;
+  overflow: hidden;
+  scale: 1;
+  bottom: 0;
+  right: 0;
 }
 
 .field,
@@ -38,7 +71,10 @@
 .fieldBook select {
   height: 5vh;
   border-radius: 10px;
-  border-style: none;
+  background-color: var(--green);
+  border: solid white 1px;
+  color: white;
+  width: 200px;
 }
 
 .field textarea {
@@ -47,12 +83,63 @@
 }
 
 .formContainer button[type="submit"] {
-  background-color: #252525;
-  color: white;
-  width: 50%;
-  height: 55px;
+  width: 180px;
+  background-color: white;
+  color: var(--green);
+  font-weight: 700;
+  height: 45px;
+  margin-top: 6px;
   border-radius: 18px;
-  font-size: 15px;
-  margin-top: 20px;
   border-style: none;
+}
+
+@media screen and (min-width: 800px) {
+
+  .formContainer {
+    margin: 0;
+    height: 100vh;
+    border-radius: 0;
+    background-size: contain;
+  }
+
+  .hotel {
+    left: 20vw;
+    width: auto;
+    height: 100vh;
+    scale: 2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .fieldBook {
+    margin-top: 10px;
+  }
+  .last {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .last button[type="submit"] {
+    width: 300px;
+    max-width: none;
+    background-color: white;
+    color: var(--green);
+    font-weight: 700;
+    height: 45px;
+    margin-top: 6px;
+    margin-left: -50px;
+  }
+
+  .inputsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  label {
+    width: fit-content;
+  }
+  
+
 }
