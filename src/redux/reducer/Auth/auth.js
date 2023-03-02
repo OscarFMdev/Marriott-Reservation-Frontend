@@ -42,3 +42,24 @@ export const signIn = createAsyncThunk(LOGIN, async (user) => {
   const data = await response.json();
   return data;
 });
+
+export const getUser = createAsyncThunk(GET_USER, async () => {
+  await fetch(`${baseURL}/users`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: localStorage.getItem('token'),
+    },
+  }).then((res) => {
+    if (res.ok) {
+      const user = res.json();
+      localStorage.setItem('user', JSON.stringify(user));
+      return user;
+    }
+    return res.json().then((json) => Promise.reject(json));
+  });
+});
+
+
+
+export default authSlice.reducer;
