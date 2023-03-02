@@ -7,3 +7,23 @@ const initialState = {
   error: '',
 };
 
+const LOGIN = 'LOGIN';
+const SIGNUP = 'SIGNUP';
+const GET_USER = 'GET_USER';
+
+export const signUp = createAsyncThunk(SIGNUP, async (user) => {
+  const response = await fetch(`${baseURL}/signup`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ user }),
+  });
+  if (response.ok) {
+    localStorage.setItem('token', response.headers.get('Authorization'));
+    return response.json();
+  }
+  const data = await response.json();
+  return data;
+});
+
