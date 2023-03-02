@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
-import { loginUser } from '../redux/loginSlice';
+import { signIn } from '../redux/reducer/Auth/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,12 +13,11 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser({
-      user: {
-        email,
-        password,
-      },
-    }));
+    const user = {
+      email,
+      password,
+    };
+    dispatch(signIn(user));
   };
 
   return (
@@ -47,6 +47,10 @@ const Login = () => {
             </div>
 
             <Button type="submit" label="Login" />
+            <p>
+              Don &apos t Have an Account?
+              <NavLink to="/signup">Sign Up</NavLink>
+            </p>
           </form>
         </div>
       </div>
