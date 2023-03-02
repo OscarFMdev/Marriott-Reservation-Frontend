@@ -86,3 +86,21 @@ export const authSlice = createSlice({
         status: 'failed',
         message: action.payload.message,
       }))
+      .addCase(signIn.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
+      .addCase(signIn.fulfilled, (state, action) => ({
+        ...state,
+        status: 'success',
+        message: action.payload.message,
+      }))
+      .addCase(signIn.rejected, (state, action) => ({
+        ...state,
+        status: 'failed',
+        message: action.payload.message,
+      }));
+  },
+});
+
+export default authSlice.reducer;
