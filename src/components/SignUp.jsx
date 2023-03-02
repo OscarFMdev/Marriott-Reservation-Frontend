@@ -1,25 +1,30 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { signUpUser } from '../redux/signUpSlice';
+import { signUp } from '../redux/reducer/Auth/auth';
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [password_confirmation, setPasswordConfirmation] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signUpUser({
-      user: {
-        name,
-        email,
-        password,
-      },
-    }));
+    const user = {
+      name,
+      email,
+      password,
+      password_confirmation,
+    };
+    dispatch(signUp(user));
+    navigate('/login');
   };
 
   return (
@@ -59,7 +64,20 @@ const SignUp = () => {
               />
             </div>
 
+            <div className="p-field">
+              <Password
+                id="password_confirmation"
+                value={password_confirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
+                placeholder="Password"
+              />
+            </div>
+
             <Button label="Sign Up" type="submit" />
+            <p>
+              Already have an account?
+              <NavLink to="/login">Login</NavLink>
+            </p>
           </form>
         </div>
       </div>
