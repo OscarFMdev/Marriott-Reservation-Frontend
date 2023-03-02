@@ -60,6 +60,29 @@ export const getUser = createAsyncThunk(GET_USER, async () => {
   });
 });
 
-
-
-export default authSlice.reducer;
+export const authSlice = createSlice({
+  name: 'auth',
+  initialState,
+  reducers: {
+    setStatusIdle: (state) => ({
+      ...state,
+      status: 'idle',
+      message: '',
+    }),
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(signUp.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
+      .addCase(signUp.fulfilled, (state, action) => ({
+        ...state,
+        status: 'success',
+        message: action.payload.message,
+      }))
+      .addCase(signUp.rejected, (state, action) => ({
+        ...state,
+        status: 'failed',
+        message: action.payload.message,
+      }))
