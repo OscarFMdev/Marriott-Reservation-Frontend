@@ -20,6 +20,12 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '/';
+  };
+
   return (
     <nav className={navbar.nav}>
       <div role="presentation" className={`${navbar.menuIcon} ${isOpen ? navbar.open : ''}`} onClick={toggleMenu}>
@@ -42,6 +48,9 @@ const NavBar = () => {
         </NavLink>
         <NavLink to="/deleteroom" style={handleActive} className={navbar.link} onClick={toggleMenu}>
           Delete room
+        </NavLink>
+        <NavLink to="/" style={handleActive} className={navbar.link} onClick={handleLogout}>
+          Log out
         </NavLink>
       </div>
     </nav>
