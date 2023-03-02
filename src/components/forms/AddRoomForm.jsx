@@ -35,34 +35,41 @@ const AddRoomForm = () => {
     <form onSubmit={handleSubmit} className={form.formContainer}>
         <div className={form.hotel}></div>
       <h1>Add Room</h1>
-      <div className={form.field}>
-        <label htmlFor="name">
-          Name:
-        </label>
-        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+
+      <div className={form.inputsContainer}>
+
+        <div className={form.field}>
+          <label htmlFor="name">
+            <input placeholder='Hotel room name' type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+          </label>
+        </div>
+        <div className={form.field}>
+          <label htmlFor="image">
+            <input placeholder='Image URL' type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
+          </label>
+        </div>
+        <div className={form.field}>
+          <label htmlFor="description">
+            <textarea placeholder='Description' id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+          </label>
+        </div>
+        <div className={form.field}>
+          <label htmlFor="price">
+            <input placeholder='Price' type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+          </label>
+        </div>
+        <div className={form.field}>
+          <label htmlFor="roomType">
+            <select id="roomType" value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+              <option value="">-- Select a room type --</option>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+              <option value="Suite">Suite</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit">Add Room</button>
       </div>
-      <div className={form.field}>
-        <label htmlFor="image">Image:</label>
-        <input type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
-      </div>
-      <div className={form.field}>
-        <label htmlFor="description">Description:</label>
-        <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
-      </div>
-      <div className={form.field}>
-        <label htmlFor="price">Price:</label>
-        <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-      </div>
-      <div className={form.field}>
-        <label htmlFor="roomType">Room Type:</label>
-        <select id="roomType" value={roomType} onChange={(e) => setRoomType(e.target.value)}>
-          <option value="">-- Select a room type --</option>
-          <option value="Single">Single</option>
-          <option value="Double">Double</option>
-          <option value="Suite">Suite</option>
-        </select>
-      </div>
-      <button type="submit">Add Room</button>
     </form>
   );
 };
