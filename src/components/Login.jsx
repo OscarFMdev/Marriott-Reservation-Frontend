@@ -7,7 +7,7 @@ import { Password } from 'primereact/password';
 import { loginUser } from '../redux/loginSlice';
 
 const Login = () => {
-  const signIn = useSignIn()
+ 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -51,7 +51,6 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 feedback={false}
-                required
               />
             </div>
 
