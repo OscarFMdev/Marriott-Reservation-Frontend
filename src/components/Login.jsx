@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
@@ -48,6 +49,10 @@ const Login = () => {
             </div>
 
             <Button type="submit" label="Login" />
+            <p>
+              Don &apos t Have an Account?
+              <NavLink to="/signup">Sign Up</NavLink>
+            </p>
           </form>
         </div>
       </div>
