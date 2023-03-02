@@ -27,3 +27,18 @@ export const signUp = createAsyncThunk(SIGNUP, async (user) => {
   return data;
 });
 
+export const signIn = createAsyncThunk(LOGIN, async (user) => {
+  const response = await fetch(`${baseURL}/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ user }),
+  });
+  if (response.ok) {
+    localStorage.setItem('token', response.headers.get('Authorization'));
+    return response.json();
+  }
+  const data = await response.json();
+  return data;
+});
