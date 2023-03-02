@@ -33,6 +33,7 @@ const AddRoomForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
+        <div className={form.hotel}></div>
       <h1>Add Room</h1>
       <div className={form.field}>
         <label htmlFor="name">
