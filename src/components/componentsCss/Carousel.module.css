@@ -1,0 +1,50 @@
+.container {
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+  background-color: antiquewhite;
+  align-content: center;
+  justify-content: center;  
+}
+
+.item_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.img_container {
+    max-width: 600px;
+    max-height: 300px;
+    align-self: center;
+}
+
+.img_container img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;  
+}
+
+.room_title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: cursive; 
+  color: #000;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
