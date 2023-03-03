@@ -18,20 +18,21 @@ import token from './redux/reducer/Auth/token';
 
 const App = () => {
   const tokenSet = token();
-  return(
+  return (
     <div className="container">
-      {tokenSet &&
+      {tokenSet
+      && (
       <div className="sidebar">
         <Navbar />
       </div>
-      }
+      )}
       <main className="content">
         <Routes>
-        {!tokenSet ? (
-              <Route path="/" element={<Homepage />} />
-            ) : (
-              <Route path="/" element={<Roomspage />} />
-            )}
+          {!tokenSet ? (
+            <Route path="/" element={<Homepage />} />
+          ) : (
+            <Route path="/" element={<Roomspage />} />
+          )}
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Loginpage />} />
           <Route path="/signup" element={<SignUpPage />} />
@@ -47,5 +48,5 @@ const App = () => {
     </div>
 
   );
-}
+};
 export default App;
