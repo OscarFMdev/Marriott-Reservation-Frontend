@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import form from './Form.module.css';
 
 const AddRoomForm = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
@@ -27,6 +29,7 @@ const AddRoomForm = () => {
         },
       }),
     });
+    navigate('/rooms');
     return response.json();
   };
 
