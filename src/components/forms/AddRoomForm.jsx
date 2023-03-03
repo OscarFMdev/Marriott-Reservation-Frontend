@@ -35,30 +35,33 @@ const AddRoomForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
-        <div className={form.hotel}></div>
+      <div className={form.hotel} />
       <h1 className={form.header}>Add Room</h1>
-      <p className={form.details}>Welcome Admin! Help this page grow by adding new rooms. You can add a new room by completing the following form:</p>
+      <p className={form.details}>
+        Welcome Admin! Help this page grow by adding new rooms.
+        You can add a new room by completing the following form:
+      </p>
 
       <div className={`${form.inputsContainer} ${form.center}`}>
 
         <div className={form.field}>
           <label htmlFor="name">
-            <input placeholder='Hotel room name' type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input placeholder="Hotel room name" type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
           <label htmlFor="image">
-            <input placeholder='Image URL' type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
+            <input placeholder="Image URL" type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
           <label htmlFor="description">
-            <textarea placeholder='Description' id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <textarea placeholder="Description" id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
           <label htmlFor="price">
-            <input placeholder='Price' type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <input placeholder="Price" type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
