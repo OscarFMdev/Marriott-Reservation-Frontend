@@ -22,7 +22,7 @@ import Details from './components/Details';
 const App = () => {
   const dispatch = useDispatch();
   dispatch(fetchRooms());
-
+return (
   <div className="container">
     <div className="sidebar">
       {window.location.pathname !== '/' && <Navbar />}
@@ -33,6 +33,8 @@ const App = () => {
         <Route path="/login" element={<Loginpage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/rooms" element={<Roomspage />} />
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/carousel" element={<Carousel />} />
         <Route element={<ProtectRoutes />}>
           <Route path="/booking" element={<Bookingpage />} />
           <Route path="/mybookings" element={<MyBookingspage />} />
@@ -44,5 +46,6 @@ const App = () => {
   </div>
 
 );
+};
 
 export default App;

@@ -81,6 +81,7 @@ const SignUp = () => {
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
                 placeholder="Password"
                 required
+                feedback={false}
               />
             </div>
 
