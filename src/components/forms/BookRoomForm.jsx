@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import form from './Form.module.css';
 
 function ReservationForm() {
+  const navigate = useNavigate();
   const [hotels, setHotels] = useState([]);
   const [formData, setFormData] = useState({
     hotelId: '',
@@ -39,6 +41,7 @@ function ReservationForm() {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
+      navigate('/mybookings');
   };
 
   return (
