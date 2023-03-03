@@ -19,12 +19,29 @@ export const signUp = createAsyncThunk(SIGNUP, async (user) => {
     },
     body: JSON.stringify({ user }),
   });
-  if (response.ok) {
+
+  const { status: code } = response;
+  if (code === 200) {
     localStorage.setItem('token', response.headers.get('Authorization'));
-    return response.json();
+    const { data, message } = await response.json();
+    return {
+      status: 'success',
+      message,
+      data,
+    };
   }
-  const data = await response.json();
-  return data;
+
+  if (code === 422) {
+    const { data } = await response.json();
+    return {
+      data,
+      status: 'failed',
+      message: 'The email already exists or the password is too short',
+      error: 'Signup failed',
+    };
+  }
+
+  return null;
 });
 
 export const signIn = createAsyncThunk(LOGIN, async (user) => {
@@ -35,12 +52,26 @@ export const signIn = createAsyncThunk(LOGIN, async (user) => {
     },
     body: JSON.stringify({ user }),
   });
-  if (response.ok) {
+  const { status: code } = response;
+  if (code === 200) {
     localStorage.setItem('token', response.headers.get('Authorization'));
-    return response.json();
+    const { data, message } = await response.json();
+    return {
+      status: 'success',
+      message,
+      data,
+    };
   }
-  const data = await response.json();
-  return data;
+
+  if (code === 401) {
+    return {
+      status: 'failed',
+      message: 'Invalid email or password',
+      error: 'Login failed, Please check your email and password',
+    };
+  }
+
+  return null;
 });
 
 export const getUser = createAsyncThunk(GET_USER, async () => {
@@ -63,13 +94,7 @@ export const getUser = createAsyncThunk(GET_USER, async () => {
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    setStatusIdle: (state) => ({
-      ...state,
-      status: 'idle',
-      message: '',
-    }),
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(signUp.pending, (state) => ({
@@ -78,13 +103,13 @@ export const authSlice = createSlice({
       }))
       .addCase(signUp.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: action.payload.status,
         message: action.payload.message,
       }))
-      .addCase(signUp.rejected, (state, action) => ({
+      .addCase(signUp.rejected, (state) => ({
         ...state,
         status: 'failed',
-        message: action.payload.message,
+        error: 'Network Error',
       }))
       .addCase(signIn.pending, (state) => ({
         ...state,
@@ -92,13 +117,13 @@ export const authSlice = createSlice({
       }))
       .addCase(signIn.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: action.payload.status,
         message: action.payload.message,
       }))
       .addCase(signIn.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        message: action.payload.message,
+        error: action.payload.message,
       }));
   },
 });
