@@ -26,7 +26,7 @@ const AddRoomForm = () => {
           room_type: roomType,
         },
       }),
-    });
+    });    
     const data = await response.json();
     console.log(data);
   };

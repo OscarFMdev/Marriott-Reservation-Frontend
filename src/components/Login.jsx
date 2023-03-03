@@ -7,7 +7,6 @@ import { Password } from 'primereact/password';
 import { loginUser } from '../redux/loginSlice';
 
 const Login = () => {
- 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -40,7 +39,6 @@ const Login = () => {
                 label="Email"
                 placeholder="Email"
                 icon="pi pi-envelope"
-                required
               />
             </div>
 
