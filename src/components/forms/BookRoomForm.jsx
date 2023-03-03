@@ -30,7 +30,10 @@ function ReservationForm() {
     };
     fetch('http://127.0.0.1:3000/api/v1/users/6/bookings', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
       body: JSON.stringify({ booking: bookingData }),
     })
       .then((response) => response.json())
