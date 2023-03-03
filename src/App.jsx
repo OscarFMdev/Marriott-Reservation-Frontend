@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Navbar from './components/Navbar';
 import Loginpage from './pages/Loginpage';
 import SignUpPage from './pages/SignUpPage';
@@ -14,8 +15,13 @@ import './App.css';
 import MyBookingspage from './pages/MyBookingspage';
 import AddRoompage from './pages/AddRoompage';
 import DeleteRoompage from './pages/DeleteRoompage';
+import { fetchRooms } from './redux/roomSlice';
+import Carousel from './components/Carousel';
+import Details from './components/Details';
 
-const App = () => (
+const App = () => {
+  const dispatch = useDispatch();
+  dispatch(fetchRooms());
 
   <div className="container">
     <div className="sidebar">
