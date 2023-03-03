@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import navbar from './Navbar.module.css';
 import logo from '../assets/img/marriott-logo-mobile.png';
 
@@ -15,6 +15,8 @@ const handleActive = ({ isActive }) => (isActive
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [menuClass, setMenuClass] = useState('');
+  const location = useLocation();
 
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
@@ -26,11 +28,24 @@ const NavBar = () => {
     window.location.href = '/';
   };
 
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/addroom':
+        setMenuClass('white-bars');
+        break;
+      case '/booking':
+        setMenuClass('white-bars');
+        break;
+      default:
+        setMenuClass('');
+    }
+  }, [location.pathname]);
+
   return (
     <nav className={navbar.nav}>
       <div role="presentation" className={`${navbar.menuIcon} ${isOpen ? navbar.open : ''}`} onClick={toggleMenu}>
-        <div className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.firstBar : ''}`} />
-        <div className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.secondBar : ''}`} />
+        <div id={`${isOpen ? '' : menuClass}`} className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.firstBar : ''}`} />
+        <div id={`${isOpen ? '' : menuClass}`} className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.secondBar : ''}`} />
       </div>
       <div className={`${navbar.menuItems} ${isOpen ? navbar.open : ''}`}>
         <img src={logo} alt="Logo" className={navbar.logo} />
