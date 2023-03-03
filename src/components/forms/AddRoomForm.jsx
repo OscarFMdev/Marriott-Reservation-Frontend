@@ -34,9 +34,9 @@ const AddRoomForm = () => {
     <form onSubmit={handleSubmit} className={form.formContainer}>
         <div className={form.hotel}></div>
       <h1 className={form.header}>Add Room</h1>
-      <p></p>
+      <p className={form.details}>Welcome Admin! Help this page grow by adding new rooms. You can add a new room by completing the following form:</p>
 
-      <div className={form.inputsContainer}>
+      <div className={`${form.inputsContainer} ${form.center}`}>
 
         <div className={form.field}>
           <label htmlFor="name">
