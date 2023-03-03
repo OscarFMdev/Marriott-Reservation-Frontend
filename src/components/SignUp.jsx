@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signUp } from '../redux/reducer/Auth/auth';
 
 const SignUp = () => {
@@ -14,6 +14,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [password_confirmation, setPasswordConfirmation] = useState('');
   const dispatch = useDispatch();
+  const { status, message } = useSelector((state) => state.auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,13 +25,19 @@ const SignUp = () => {
       password_confirmation,
     };
     dispatch(signUp(user));
-    navigate('/login');
   };
+
+  useEffect(() => {
+    if (message === 'Sign up success') {
+      navigate('/login');
+    }
+  }, [message, navigate]);
 
   return (
     <div className="p-grid p-justify-center">
       <div className="p-col-12 p-md-8 p-lg-6">
         <div className="card">
+          { status === 'failed' && <p>{message}</p> }
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
             <div className="p-field">
@@ -41,6 +48,7 @@ const SignUp = () => {
                 onChange={(e) => setName(e.target.value)}
                 label="Name"
                 placeholder="Full Name"
+                required
               />
             </div>
 
@@ -52,6 +60,7 @@ const SignUp = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email"
                 placeholder="Email"
+                required
               />
             </div>
 
@@ -61,6 +70,7 @@ const SignUp = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
+                required
               />
             </div>
 
@@ -70,6 +80,7 @@ const SignUp = () => {
                 value={password_confirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
                 placeholder="Password"
+                required
               />
             </div>
 
