@@ -1,21 +1,27 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchRooms } from '../redux/reducer/roomSlice';
-
-
+import { useSelector } from 'react-redux';
+import Carousel from './Carousel';
 
 const Rooms = () => {
-  const dispatch = useDispatch();
-  dispatch(fetchRooms());
+  const rooms = useSelector((state) => state.rooms);
+  if (rooms.loading) {
+
+    return <i className="pi pi-spin pi-spinner" style={{ fontSize: '4rem' }}></i>
+
+  }
+  if (rooms.error) {
+      
+      return <h1>{rooms.error}</h1>
+  
+    }
   return (
     <div>
-      <h1>Rooms</h1>
+      <Carousel />
     </div>
   );
+
+  
+
+  
 };
-
-
-
-
 
 export default Rooms;
