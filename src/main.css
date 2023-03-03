@@ -17,6 +17,10 @@
   text-decoration: none;
 }
 
+#white-bars {
+  background-color: white;
+}
+
 @media (min-width: 800px) {
   .container {
     display: flex;
