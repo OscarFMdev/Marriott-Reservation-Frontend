@@ -5,9 +5,7 @@ import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
 import { loginUser } from '../redux/loginSlice';
 
-
 const Login = () => {
- 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -20,7 +18,7 @@ const Login = () => {
         password,
       },
     }));
-  };  
+  };
 
   return (
     <div className="p-grid p-justify-center">
@@ -36,6 +34,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email"
                 placeholder="Email"
+                icon="pi pi-envelope"
               />
             </div>
 
