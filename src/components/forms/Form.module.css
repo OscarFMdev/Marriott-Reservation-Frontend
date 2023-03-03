@@ -51,6 +51,10 @@
   right: 0;
 }
 
+.field {
+  margin-bottom: 10px;
+}
+
 .field,
 .fieldBook {
   display: flex;
