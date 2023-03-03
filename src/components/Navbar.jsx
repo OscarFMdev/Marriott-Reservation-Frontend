@@ -8,6 +8,7 @@ const handleActive = ({ isActive }) => (isActive
     backgroundColor: '#95C010',
     color: 'white',
     textDecoration: 'none',
+    transition: '0.5s linear',
   }
   : {
     color: 'black',
