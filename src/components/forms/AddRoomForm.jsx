@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import form from './Form.module.css';
+import { addRoom, NewRoom } from '../../redux/reducer/Rooms/roomSlice';
 
 const AddRoomForm = () => {
   const [name, setName] = useState('');
@@ -7,55 +9,47 @@ const AddRoomForm = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [roomType, setRoomType] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const room = {
+      name,
+      image,
+      description,
+      price,
+      room_type: roomType,
 
-    const response = await fetch('http://127.0.0.1:3000/api/v1/rooms', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-      body: JSON.stringify({
-        room: {
-          name,
-          image,
-          description,
-          price,
-          room_type: roomType,
-        },
-      }),
-    });    
-    const data = await response.json();
-    console.log(data);
+    };
+    dispatch(addRoom(room));
+    dispatch(NewRoom(room));
   };
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
-        <div className={form.hotel}></div>
+      <div className={form.hotel} />
       <h1>Add Room</h1>
 
       <div className={form.inputsContainer}>
 
         <div className={form.field}>
           <label htmlFor="name">
-            <input placeholder='Hotel room name' type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input placeholder="Hotel room name" type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
           <label htmlFor="image">
-            <input placeholder='Image URL' type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
+            <input placeholder="Image URL" type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
           <label htmlFor="description">
-            <textarea placeholder='Description' id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <textarea placeholder="Description" id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
           <label htmlFor="price">
-            <input placeholder='Price' type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <input placeholder="Price" type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
           </label>
         </div>
         <div className={form.field}>
