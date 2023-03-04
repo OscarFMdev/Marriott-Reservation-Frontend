@@ -18,7 +18,6 @@
   position: relative;
 }
 
-
 .header {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
@@ -83,6 +82,7 @@
   border-radius: 20px;
   height: 10vh;
 }
+
 input::placeholder,
 textarea::placeholder {
   color: rgb(225, 225, 225);
@@ -97,6 +97,7 @@ textarea::placeholder {
   background-color: white;
   transition: ease-in 0.5s;
 }
+
 .formContainer button[type="submit"] {
   width: 180px;
   background-color: white;
@@ -116,7 +117,6 @@ textarea::placeholder {
 }
 
 @media screen and (min-width: 800px) {
-
   .formContainer {
     margin: 0;
     height: 100vh;
@@ -137,6 +137,7 @@ textarea::placeholder {
   .fieldBook {
     margin-top: 10px;
   }
+
   .last {
     display: flex;
     align-items: flex-start;
@@ -162,6 +163,4 @@ textarea::placeholder {
   label {
     width: fit-content;
   }
-  
-
 }
