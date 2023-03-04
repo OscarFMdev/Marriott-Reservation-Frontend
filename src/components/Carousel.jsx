@@ -26,7 +26,7 @@ const Carousel = () => {
       <div className={stl.container}>
 
         {rooms.rooms.map((room, index) => (
-          <div className={index === current ? '' : ''} key={index}>
+          <div className={index === current ? '' : ''} key={room.id}>
             {index === current && (
 
             <div className="">
@@ -35,8 +35,8 @@ const Carousel = () => {
                 <p className="">{room.type}</p>
                 <div className={stl.img_container}>
                   <Link to={`/Details/${room.id}`}>
-                  <img src={room.image} alt="" />
-                </Link>
+                    <img src={room.image} alt="" />
+                  </Link>
                 </div>
               </div>
             </div>

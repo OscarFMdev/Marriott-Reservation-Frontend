@@ -40,28 +40,32 @@ function ReservationForm() {
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
-      <div className={form.hotel}></div>
+      <div className={form.hotel} />
       <h1 className={form.header}>Book a Marriott Hotel Room</h1>
-      <p className={form.details}>Marriott is the largest hotel chain in the world. There are 3 room models in this Marriott Hotel: Single, Double and Suite. If you want to live the Marriott experience fill this form!</p>
+      <p className={form.details}>
+        Marriott is the largest hotel chain in the world.
+        There are 3 room models in this Marriott Hotel: Single, Double and Suite.
+        If you want to live the Marriott experience fill this form!
+      </p>
       <div className={form.inputsContainer}>
 
         <div className={form.fieldBook}>
           <label htmlFor="hotelId">
-
-          </label>
-          <select
-            id="hotelId"
-            name="hotelId"
-            value={formData.hotelId}
-            onChange={handleInputChange}
+            Select:
+            <select
+              id="hotelId"
+              name="hotelId"
+              value={formData.hotelId}
+              onChange={handleInputChange}
             >
-            <option value="">-- Select a hotel --</option>
-            {hotels.map((hotel) => (
-              <option key={hotel.id} value={hotel.id}>
-                {hotel.name}
-              </option>
-            ))}
-          </select>
+              <option value="">-- Select a hotel --</option>
+              {hotels.map((hotel) => (
+                <option key={hotel.id} value={hotel.id}>
+                  {hotel.name}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <div className={form.fieldBook}>
           <label htmlFor="startDate">
@@ -71,7 +75,7 @@ function ReservationForm() {
               name="startDate"
               value={formData.startDate}
               onChange={handleInputChange}
-              />
+            />
           </label>
         </div>
         <div className={form.last}>
@@ -83,7 +87,7 @@ function ReservationForm() {
                 name="endDate"
                 value={formData.endDate}
                 onChange={handleInputChange}
-                />
+              />
             </label>
           </div>
           <button type="submit">Book now</button>

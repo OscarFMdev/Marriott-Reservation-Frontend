@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 const Details = () => {
   const params = useParams();
   const rooms = useSelector((state) => state.rooms);
-  const room = rooms.rooms.find((r) => r.id === parseInt(params.id, 10)); 
+  const room = rooms.rooms.find((r) => r.id === parseInt(params.id, 10));
 
   return (
     <div>
