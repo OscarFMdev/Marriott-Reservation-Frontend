@@ -54,6 +54,10 @@ const roomsSlice = createSlice({
     PopRoom: (state, action) => {
       const value = state;
       value.rooms.pop(action.payload);
+      value.message = 'Room deleted successfully';
+      value.status = 'success';
+      value.error = null;
+      value.rooms = value.rooms.filter((room) => room.id !== action.payload);
     },
   },
   extraReducers: {
