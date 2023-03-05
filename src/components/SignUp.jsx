@@ -40,51 +40,60 @@ const SignUp = () => {
           { status === 'failed' && <p>{message}</p> }
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
-            <div className="p-field">
-              <InputText
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                label="Name"
-                placeholder="Full Name"
-                required
-              />
+            <div className="p-field pb-2">
+              <span className="p-input-icon-right">
+                <i className="pi pi-user" />
+                <InputText
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  label="Name"
+                  placeholder="Full Name"
+                  required
+                />
+              </span>
             </div>
 
-            <div className="p-field">
-              <InputText
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                label="Email"
-                placeholder="Email"
-                required
-              />
+            <div className="p-field pb-2">
+              <span className="p-input-icon-right">
+                <i className="pi pi-envelope" />
+                <InputText
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  label="Email"
+                  placeholder="Email"
+                  required
+                />
+              </span>
             </div>
 
-            <div className="p-field">
+            <div className="p-field pb-2">
               <Password
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
+                toggleMask
               />
             </div>
 
-            <div className="p-field">
+            <div className="p-field pb-2">
               <Password
                 id="password_confirmation"
                 value={password_confirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
                 placeholder="Password"
                 required
+                feedback={false}
+                toggleMask
               />
             </div>
 
-            <Button label="Sign Up" type="submit" />
+            <Button label="Sign Up" type="submit" className="bg-green-500 border-200" />
             <p>
               Already have an account?
               <NavLink to="/login">Login</NavLink>

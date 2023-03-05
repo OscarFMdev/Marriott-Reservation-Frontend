@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import form from './Form.module.css';
+import { useDispatch } from 'react-redux';
+import { addRoom, NewRoom } from '../../redux/reducer/Rooms/roomSlice';
 
 const AddRoomForm = () => {
   const navigate = useNavigate();
@@ -9,37 +11,37 @@ const AddRoomForm = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [roomType, setRoomType] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const room = {
+      name,
+      image,
+      description,
+      price,
+      room_type: roomType,
 
-    const response = await fetch('http://127.0.0.1:3000/api/v1/rooms', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-      body: JSON.stringify({
-        room: {
-          name,
-          image,
-          description,
-          price,
-          room_type: roomType,
-        },
-      }),
-    });
+    };
+    dispatch(addRoom(room));
+    dispatch(NewRoom(room));
+    setName('');
+    setImage('');
+    setDescription('');
+    setPrice('');
+    setRoomType('');
     navigate('/rooms');
-    return response.json();
   };
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
-        <div className={form.hotel}></div>
+      <div className={form.hotel}></div>
       <h1 className={form.header}>Add Room</h1>
-      <p></p>
+      <p> Welcome Admin! Help this page grow by adding new rooms.
+        You can add a new room by completing the following form:</p>
 
       <div className={`${form.inputsContainer} ${form.center}`}>
+
 
         <div className={form.field}>
           <label htmlFor="name">

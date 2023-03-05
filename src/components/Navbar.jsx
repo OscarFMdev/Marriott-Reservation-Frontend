@@ -28,7 +28,6 @@ const NavBar = () => {
     localStorage.removeItem('user');
     window.location.href = '/';
   };
-
   useEffect(() => {
     switch (location.pathname) {
       case '/addroom':

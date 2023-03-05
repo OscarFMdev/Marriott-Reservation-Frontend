@@ -170,7 +170,6 @@ textarea::placeholder {
     row-gap: 6px;
   }
 
-
   label {
     width: fit-content;
   }
@@ -183,4 +182,5 @@ textarea::placeholder {
     font-size: 17px;
     font-weight: 700;
   }
+
 }

@@ -57,15 +57,14 @@ export const signIn = createAsyncThunk(LOGIN, async (user) => {
     localStorage.setItem('token', response.headers.get('Authorization'));
     const { data, message } = await response.json();
     return {
-      user: data,
       status: 'success',
       message,
+      data,
     };
   }
 
   if (code === 401) {
     return {
-      user: {},
       status: 'failed',
       message: 'Invalid email or password',
       error: 'Login failed, Please check your email and password',
@@ -76,37 +75,20 @@ export const signIn = createAsyncThunk(LOGIN, async (user) => {
 });
 
 export const getUser = createAsyncThunk(GET_USER, async () => {
-  const response = await fetch(`${baseURL}/users`, {
+  await fetch(`${baseURL}/users`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: localStorage.getItem('token'),
     },
+  }).then((res) => {
+    if (res.ok) {
+      const user = res.json();
+      localStorage.setItem('user', JSON.stringify(user));
+      return user;
+    }
+    return res.json().then((json) => Promise.reject(json));
   });
-
-  const { status: code } = response;
-
-  if (code === 401) {
-    localStorage.removeItem('token');
-    return {
-      user: {},
-      status: 'failed',
-      error: 'Unauthorized User, Please Login',
-      message: 'Session expired, please login again',
-    };
-  }
-
-  if (code === 200) {
-    const currentUser = await response.json();
-    return {
-      user: currentUser,
-      status: 'success',
-      error: null,
-      message: 'User logged in successfully',
-    };
-  }
-
-  return null;
 });
 
 export const authSlice = createSlice({
@@ -121,7 +103,6 @@ export const authSlice = createSlice({
       }))
       .addCase(signUp.fulfilled, (state, action) => ({
         ...state,
-        auth: action.payload.data,
         status: action.payload.status,
         message: action.payload.message,
       }))
@@ -136,7 +117,6 @@ export const authSlice = createSlice({
       }))
       .addCase(signIn.fulfilled, (state, action) => ({
         ...state,
-        auth: action.payload.user,
         status: action.payload.status,
         message: action.payload.message,
       }))
@@ -144,21 +124,6 @@ export const authSlice = createSlice({
         ...state,
         status: 'failed',
         error: action.payload.message,
-      }))
-      .addCase(getUser.pending, (state) => ({
-        ...state,
-        status: 'loading',
-      }))
-      .addCase(getUser.fulfilled, (state, action) => ({
-        ...state,
-        auth: action.payload.user,
-        status: action.payload.status,
-        message: action.payload.message,
-      }))
-      .addCase(getUser.rejected, (state, action) => ({
-        ...state,
-        status: 'failed',
-        error: action.payload.error,
       }));
   },
 });

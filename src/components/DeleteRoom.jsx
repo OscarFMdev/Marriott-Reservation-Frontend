@@ -1,9 +1,10 @@
 import React from 'react';
+import DeleteRoomForm from './forms/DeleteRoomForm';
 
-const DeleteRoom = () => (
+const RenderDeleteRoom = () => (
   <div>
-    <h1>Delete room</h1>
+    <DeleteRoomForm />
   </div>
 );
 
-export default DeleteRoom;
+export default RenderDeleteRoom;
