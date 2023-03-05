@@ -6,7 +6,7 @@ import dstl from './componentsCss/Details.module.css';
 const Details = () => {
   const params = useParams();
   const rooms = useSelector((state) => state.rooms);
-  const room = rooms.rooms.find((r) => r.id === parseInt(params.id, 10));
+  const room = rooms.rooms.find((r) => r.name === params.name);
 
   return (
     <div>
