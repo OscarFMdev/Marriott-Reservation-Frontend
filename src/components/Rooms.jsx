@@ -1,9 +1,16 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
+import Carousel from './Carousel';
 
-const Rooms = () => (
-  <div>
-    <h1>Rooms</h1>
-  </div>
-);
+const Rooms = () => {
+  const rooms = useSelector((state) => state.rooms);
+  if (rooms.loading) {
+    return <i className="pi pi-spin pi-spinner" style={{ fontSize: '4rem' }} />;
+  }
+  return (
+    <div>
+      <Carousel />
+    </div>
+  );
+};
 
 export default Rooms;

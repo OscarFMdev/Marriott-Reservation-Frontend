@@ -22,13 +22,13 @@
     display: flex;
     width: 100vw;
   }
-  
+
   .sidebar {
     width: 20vw;
     background-color: #ccc;
     box-sizing: border-box;
   }
-  
+
   .content {
     flex: 1;
     box-sizing: border-box;
