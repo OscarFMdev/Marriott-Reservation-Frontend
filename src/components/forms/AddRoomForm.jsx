@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import form from './Form.module.css';
 import { addRoom, NewRoom } from '../../redux/reducer/Rooms/roomSlice';
 
 const AddRoomForm = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
@@ -28,14 +30,20 @@ const AddRoomForm = () => {
     setDescription('');
     setPrice('');
     setRoomType('');
+    navigate('/rooms');
   };
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
       <div className={form.hotel} />
-      <h1>Add Room</h1>
+      <h1 className={form.header}>Add Room</h1>
+      <p className={form.details}>
+        {' '}
+        Welcome Admin! Help this page grow by adding new rooms.
+        You can add a new room by completing the following form:
+      </p>
 
-      <div className={form.inputsContainer}>
+      <div className={`${form.inputsContainer} ${form.center}`}>
 
         <div className={form.field}>
           <label htmlFor="name">

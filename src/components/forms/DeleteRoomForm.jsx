@@ -32,7 +32,6 @@ const DeleteRoomForm = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };

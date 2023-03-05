@@ -70,7 +70,7 @@
 }
 
 .link {
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 400;
   margin-top: 20px;
   width: 100%;
@@ -104,6 +104,7 @@
   .link {
     width: 100%;
     padding: 10px 0;
+    font-size: 22px;
   }
 }
 

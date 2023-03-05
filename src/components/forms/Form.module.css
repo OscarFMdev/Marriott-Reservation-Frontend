@@ -18,6 +18,10 @@
   position: relative;
 }
 
+.center {
+  align-items: center;
+}
+
 .header {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
@@ -45,6 +49,11 @@
   scale: 1;
   bottom: 0;
   right: 0;
+  background-size: cover;
+}
+
+.field {
+  margin-bottom: 10px;
 }
 
 .field,
@@ -74,8 +83,10 @@
   background-color: var(--green);
   border: solid white 1px;
   color: white;
-  width: 200px;
-  padding-left: 12px;
+  width: 40vw;
+  max-width: 350px;
+  min-width: 200px;
+  padding: 1px 12px;
 }
 
 .field textarea {
@@ -162,5 +173,14 @@ textarea::placeholder {
 
   label {
     width: fit-content;
+  }
+
+  .header {
+    font-size: 30px;
+  }
+
+  .details {
+    font-size: 17px;
+    font-weight: 700;
   }
 }

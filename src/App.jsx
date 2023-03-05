@@ -15,25 +15,36 @@ import './App.css';
 import MyBookingspage from './pages/MyBookingspage';
 import AddRoompage from './pages/AddRoompage';
 import DeleteRoompage from './pages/DeleteRoompage';
+import token from './redux/reducer/Auth/token';
 import { fetchRooms } from './redux/reducer/Rooms/roomSlice';
 import Carousel from './components/Carousel';
 import Details from './components/Details';
 
 const App = () => {
+  const tokenSet = token();
   const dispatch = useDispatch();
   dispatch(fetchRooms());
   return (
     <div className="container">
+      {tokenSet
+      && (
       <div className="sidebar">
-        {window.location.pathname !== '/' && <Navbar />}
+        <Navbar />
       </div>
+      )}
       <main className="content">
         <Routes>
+          {!tokenSet ? (
+            <Route path="/" element={<Homepage />} />
+          ) : (
+            <Route path="/" element={<Roomspage />} />
+          )}
+
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Loginpage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/rooms" element={<Roomspage />} />
-          <Route path="/details/:id" element={<Details />} />
+          <Route path="/details/:name" element={<Details />} />
           <Route path="/carousel" element={<Carousel />} />
           <Route element={<ProtectRoutes />}>
             <Route path="/booking" element={<Bookingpage />} />
@@ -44,8 +55,6 @@ const App = () => {
         </Routes>
       </main>
     </div>
-
   );
 };
-
 export default App;

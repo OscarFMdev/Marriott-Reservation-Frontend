@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import form from './Form.module.css';
 
 function ReservationForm() {
+  const navigate = useNavigate();
   const [hotels, setHotels] = useState([]);
   const [formData, setFormData] = useState({
     hotelId: '',
@@ -30,12 +32,16 @@ function ReservationForm() {
     };
     fetch('http://127.0.0.1:3000/api/v1/users/6/bookings', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
       body: JSON.stringify({ booking: bookingData }),
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
+    navigate('/mybookings');
   };
 
   return (
@@ -50,22 +56,19 @@ function ReservationForm() {
       <div className={form.inputsContainer}>
 
         <div className={form.fieldBook}>
-          <label htmlFor="hotelId">
-            Select:
-            <select
-              id="hotelId"
-              name="hotelId"
-              value={formData.hotelId}
-              onChange={handleInputChange}
-            >
-              <option value="">-- Select a hotel --</option>
-              {hotels.map((hotel) => (
-                <option key={hotel.id} value={hotel.id}>
-                  {hotel.name}
-                </option>
-              ))}
-            </select>
-          </label>
+          <select
+            id="hotelId"
+            name="hotelId"
+            value={formData.hotelId}
+            onChange={handleInputChange}
+          >
+            <option value="">-- Select a hotel --</option>
+            {hotels.map((hotel) => (
+              <option key={hotel.id} value={hotel.id}>
+                {hotel.name}
+              </option>
+            ))}
+          </select>
         </div>
         <div className={form.fieldBook}>
           <label htmlFor="startDate">
