@@ -49,6 +49,7 @@
   scale: 1;
   bottom: 0;
   right: 0;
+  background-size: cover;
 }
 
 .field {
@@ -182,5 +183,4 @@ textarea::placeholder {
     font-size: 17px;
     font-weight: 700;
   }
-
 }

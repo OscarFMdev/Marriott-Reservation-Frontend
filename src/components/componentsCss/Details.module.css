@@ -36,24 +36,6 @@
   background-color: #b6b6b6;
 }
 
-h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  font-family: cursive;
-  color: #000;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  font-family: cursive;
-  color: #000;
-  text-align: center;
-}
-
 .flex1 {
   flex: 1;
 }
@@ -77,7 +59,6 @@ h2 {
   padding: 10px 20px;
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: cursive;
   border-radius: 5px;
   cursor: pointer;
 }
