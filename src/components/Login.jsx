@@ -59,7 +59,6 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
-
                 feedback={false}
                 toggleMask
               />

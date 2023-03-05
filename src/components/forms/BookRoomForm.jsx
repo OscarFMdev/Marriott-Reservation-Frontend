@@ -36,14 +36,12 @@ function ReservationForm() {
         'Content-Type': 'application/json',
         Authorization: localStorage.getItem('token'),
       },
-
       body: JSON.stringify({ booking: bookingData }),
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
     navigate('/mybookings');
-
   };
 
   return (
