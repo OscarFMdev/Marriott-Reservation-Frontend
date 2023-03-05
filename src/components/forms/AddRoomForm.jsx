@@ -29,7 +29,7 @@ const AddRoomForm = () => {
     setImage('');
     setDescription('');
     setPrice('');
-    setRoomType('');    
+    setRoomType('');
     navigate('/rooms');
   };
 
