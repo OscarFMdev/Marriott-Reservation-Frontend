@@ -5,6 +5,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
 import { signIn } from '../redux/reducer/Auth/auth';
+import stl from './componentsCss/Login.module.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,23 +32,27 @@ const Login = () => {
   return (
     <div className="p-grid p-justify-center">
       <div className="p-col-12 p-md-8 p-lg-6">
-        <div className="card">
+        <div className={stl.card}>
           { status === 'failed' && <p>{message}</p> }
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
-            <div className="p-field">
-              <InputText
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                label="Email"
-                placeholder="Email"
-                required
-              />
+            <div className="p-field pb-2">
+              <span className="p-input-icon-right">
+                <i className="pi pi-envelope" />
+                <InputText
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  label="Email"
+                  placeholder="Email"
+                  required
+                />
+              </span>
             </div>
 
-            <div className="p-field">
+            <div className="p-field pb-3">
+
               <Password
                 id="password"
                 value={password}
@@ -55,13 +60,17 @@ const Login = () => {
                 placeholder="Password"
                 required
                 feedback={false}
+                toggleMask
               />
+
             </div>
 
-            <Button type="submit" label="Login" />
+            <Button type="submit" label="Login" className="bg-green-500 border-200" />
             <p>
-              Don &apos t Have an Account?
-              <NavLink to="/signup">Sign Up</NavLink>
+              Don`&apos;`t Have an Account?
+              <span>
+                <NavLink to="/signup"> Sign Up</NavLink>
+              </span>
             </p>
           </form>
         </div>

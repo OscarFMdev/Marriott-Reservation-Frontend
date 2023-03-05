@@ -23,6 +23,11 @@ const AddRoomForm = () => {
     };
     dispatch(addRoom(room));
     dispatch(NewRoom(room));
+    setName('');
+    setImage('');
+    setDescription('');
+    setPrice('');
+    setRoomType('');
   };
 
   return (

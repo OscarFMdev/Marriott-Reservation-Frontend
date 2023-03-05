@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom';
 import stl from './componentsCss/Carousel.module.css';
+import dstl from './componentsCss/Details.module.css';
 
 const Carousel = () => {
   const rooms = useSelector((state) => state.rooms);
@@ -44,8 +45,8 @@ const Carousel = () => {
           </div>
         ))}
         <div className={stl.action}>
-          <Button icon="pi pi-chevron-left" onClick={prevSlide} />
-          <Button icon="pi pi-chevron-right" onClick={nextSlide} />
+          <Button icon="pi pi-chevron-left" onClick={prevSlide} className={dstl.btn_color} />
+          <Button icon="pi pi-chevron-right" onClick={nextSlide} className={dstl.btn_color} />
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
   flex-direction: column;
   display: flex;
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: #fff;
   align-content: center;
   justify-content: center;
 }
