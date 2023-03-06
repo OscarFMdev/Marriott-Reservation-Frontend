@@ -118,6 +118,7 @@ export const authSlice = createSlice({
       }))
       .addCase(signIn.fulfilled, (state, action) => ({
         ...state,
+        user: action.payload.data,
         status: action.payload.status,
         message: action.payload.message,
       }))

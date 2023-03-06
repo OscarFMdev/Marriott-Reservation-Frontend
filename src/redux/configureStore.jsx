@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import auth, { getUser } from './reducer/Auth/auth';
 import reservationReducer from './reducer/reservation/reservationSlice';
-import roomsReducer from './reducer/Rooms/roomSlice';
+import roomsReducer, { fetchRooms } from './reducer/Rooms/roomSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,5 +12,6 @@ const store = configureStore({
   },
 });
 
+store.dispatch(fetchRooms());
 store.dispatch(getUser());
 export default store;

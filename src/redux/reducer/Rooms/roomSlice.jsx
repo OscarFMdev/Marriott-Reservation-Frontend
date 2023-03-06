@@ -128,5 +128,6 @@ const roomsSlice = createSlice({
   },
 });
 
+export const allRooms = (state) => state.rooms.rooms;
 export default roomsSlice.reducer;
 export const { NewRoom, PopRoom, setStateEmpty } = roomsSlice.actions;
