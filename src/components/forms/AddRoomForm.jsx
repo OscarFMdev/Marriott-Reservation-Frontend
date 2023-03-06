@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import form from './Form.module.css';
@@ -13,7 +13,6 @@ const AddRoomForm = () => {
   const [roomType, setRoomType] = useState('');
   const dispatch = useDispatch();
   const { message } = useSelector((state) => state.rooms);
-  console.log(message);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,7 +33,13 @@ const AddRoomForm = () => {
     setRoomType('');
   };
 
-  if (message === 'Room Created Successfully') navigate('/rooms');
+  const handleNavigation = () => {
+    if (message === 'Room Created Successfully') navigate('/rooms');
+  };
+
+  useEffect(() => {
+    handleNavigation();
+  }, [message]);
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
