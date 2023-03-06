@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { bookRoom } from '../../redux/reducer/reservation/reservationSlice';
+import { bookRoom, addBook } from '../../redux/reducer/reservation/reservationSlice';
 import form from './Form.module.css';
 
 function ReservationForm() {
@@ -18,8 +18,6 @@ function ReservationForm() {
 
   if (!user) navigate('/login');
 
-  if (message === 'Room Booked Successfully') navigate('/mybookings');
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -28,15 +26,18 @@ function ReservationForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const booking = {
-      userId: user.id,
-      booking: {
-        room_id: formData.hotelId,
-        start_date: formData.startDate,
-        end_date: formData.endDate,
-      },
+      room_id: formData.hotelId,
+      start_date: formData.startDate,
+      end_date: formData.endDate,
     };
 
-    dispatch(bookRoom(booking));
+    const bookingObject = {
+      booking,
+      userId: user.id,
+    };
+
+    dispatch(bookRoom(bookingObject));
+    dispatch(addBook(bookingObject));
   };
 
   return (
