@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteRoom, PopRoom, fetchRooms } from '../../redux/reducer/Rooms/roomSlice';
-import dlt from '../componentsCss/Delete.module.css';
+import table from '../TableStyles.module.css';
 
 const DeleteRoomForm = () => {
   const rooms = useSelector((state) => state.rooms);
@@ -18,21 +18,41 @@ const DeleteRoomForm = () => {
   };
 
   return (
-    <div>
+    <main className={table.container}>
+      {rooms.status === 'loading' && <h1>Loading...</h1>}
+      {rooms.status === 'error' && <h1>{rooms.message}</h1>}
+      {rooms.rooms.length === 0 && <h1>No Rooms</h1>}
       <h1>Delete Rooms</h1>
-      <div className={dlt.bg}>
-        {rooms.status === 'loading' && <h1>Loading...</h1>}
-        {rooms.status === 'error' && <h1>{rooms.message}</h1>}
-        {rooms.rooms.length === 0 && <h1>No Rooms</h1>}
-        {rooms.rooms.map((room) => (
-          <div key={room.id} className={dlt.container}>
-            <img src={room.image} alt="" />
-            <h3>{room.name}</h3>
-            <button type="submit" onClick={handleSubmit(room.id)}>Delete</button>
-          </div>
-        ))}
-      </div>
-    </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rooms.rooms.length === 0 ? (
+            <tr>
+              <td colSpan="3">You have no rooms</td>
+            </tr>
+          ) : (
+            rooms.rooms.map((room) => (
+              <tr key={room.id}>
+                <td>
+                  <img src={room.image} alt="" />
+                </td>
+                <td>{room.name}</td>
+                <td>
+                  <button onClick={handleSubmit(room.id)} className={table.deleteCancelBtn}>Delete</button>
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+
+      </table>
+    </main>
   );
 };
 
