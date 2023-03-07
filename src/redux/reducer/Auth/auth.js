@@ -75,22 +75,29 @@ export const signIn = createAsyncThunk(LOGIN, async (user) => {
   return null;
 });
 
-export const getUser = createAsyncThunk(GET_USER, async () => {
-  await fetch(`${baseURL}/users`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token'),
-    },
-  }).then((res) => {
-    if (res.ok) {
-      const user = res.json();
-      localStorage.setItem('user', JSON.stringify(user));
-      return user;
+export const getUser = createAsyncThunk(
+  GET_USER,
+  async () => {
+    const response = await fetch(`${baseURL}/users`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+    });
+
+    const { status: code } = response;
+    if (code === 200) {
+      const data = await response.json();
+      localStorage.setItem('user', JSON.stringify(data));
+      return {
+        status: 'success',
+        data,
+      };
     }
-    return res.json().then((json) => Promise.reject(json));
-  });
-});
+    return null;
+  },
+);
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -126,6 +133,20 @@ export const authSlice = createSlice({
         ...state,
         status: 'failed',
         error: action.payload.message,
+      }))
+      .addCase(getUser.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
+      .addCase(getUser.fulfilled, (state, action) => ({
+        ...state,
+        user: action.payload.data,
+        status: action.payload.status,
+      }))
+      .addCase(getUser.rejected, (state) => ({
+        ...state,
+        status: 'failed',
+        error: 'Network Error',
       }));
   },
 });
