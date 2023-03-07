@@ -1,0 +1,102 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Login renders correctly 1`] = `
+<div
+  className="p-grid p-justify-center"
+>
+  <div
+    className="p-col-12 p-md-8 p-lg-6"
+  >
+    <div
+      className="_card_ac1e6f"
+    >
+      <h1>
+        Login
+      </h1>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="p-field pb-2"
+        >
+          <span
+            className="p-input-icon-right"
+          >
+            <i
+              className="pi pi-envelope"
+            />
+            <input
+              className="p-inputtext p-component"
+              data-testid="email"
+              id="email"
+              onChange={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onPaste={[Function]}
+              placeholder="Email"
+              required={true}
+              type="email"
+              value=""
+            />
+          </span>
+        </div>
+        <div
+          className="p-field pb-3"
+        >
+          <div
+            className="p-password p-component p-inputwrapper p-input-icon-right"
+            id="password"
+            style={null}
+          >
+            <input
+              className="p-inputtext p-component p-password-input"
+              data-testid="password"
+              id={null}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onPaste={[Function]}
+              placeholder="Password"
+              required={true}
+              style={null}
+              type="password"
+              value=""
+            />
+            <i
+              className="pi pi-eye"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+        <button
+          aria-label="Login"
+          className="p-button p-component bg-green-500 border-200"
+          disabled={false}
+          type="submit"
+        >
+          <span
+            className="p-button-label p-c"
+          >
+            Login
+          </span>
+        </button>
+        <p>
+          Don't Have an Account?
+          <span>
+            <a
+              className=""
+              href="/signup"
+              onClick={[Function]}
+            >
+               Sign Up
+            </a>
+          </span>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+`;
