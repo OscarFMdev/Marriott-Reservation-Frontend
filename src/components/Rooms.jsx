@@ -8,6 +8,7 @@ const Rooms = () => {
   }
   return (
     <div>
+      <p>List of Rooms</p>
       <Carousel />
     </div>
   );
