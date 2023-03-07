@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { bookRoom, addBook } from '../../redux/reducer/reservation/reservationSlice';
 import form from './Form.module.css';
 
 function ReservationForm() {
+  const params = useParams();
+  console.log(params);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
+  const  user = useSelector((state) => state.auth);
   const { message, error } = useSelector((state) => state.reservations);
   const rooms = useSelector((state) => state.rooms.rooms);
   const [formData, setFormData] = useState({
-    hotelId: '',
+    hotelId: params.id || '',
     startDate: '',
     endDate: '',
   });
@@ -38,6 +40,7 @@ function ReservationForm() {
 
     dispatch(bookRoom(bookingObject));
     dispatch(addBook(bookingObject));
+
   };
 
   const handleNavigation = () => {
@@ -69,12 +72,27 @@ function ReservationForm() {
             onChange={handleInputChange}
             required
           >
-            <option value="">-- Select a hotel --</option>
-            {rooms.map((room) => (
-              <option key={room.id} value={room.id}>
-                {room.name}
+            <option value="">-- Select a hotel --</option>         
+            {params.id
+
+             ? (
+            
+              < option value={params.id} >
+                {rooms.filter((room) => room.id === parseInt(params.id, 10))[0].name}
               </option>
-            ))}
+            )
+            
+            : (
+              
+              rooms.map((room) => (
+                
+                <option key={room.id} value={room.id}>
+                  {room.name}
+                </option>
+             
+              ))
+            )}
+  
           </select>
         </div>
         <div className={form.fieldBook}>
