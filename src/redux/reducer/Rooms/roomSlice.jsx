@@ -76,6 +76,10 @@ const roomsSlice = createSlice({
       ...state,
       rooms: state.rooms.filter((room) => room.id !== action.payload),
     }),
+    setMessageEmpty: (state, action) => ({
+      ...state,
+      message: action.payload,
+    }),
   },
   extraReducers: (builder) => {
     builder
@@ -128,6 +132,5 @@ const roomsSlice = createSlice({
   },
 });
 
-export const allRooms = (state) => state.rooms.rooms;
 export default roomsSlice.reducer;
-export const { NewRoom, PopRoom, setStateEmpty } = roomsSlice.actions;
+export const { NewRoom, PopRoom, setMessageEmpty } = roomsSlice.actions;
