@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import token from '../redux/reducer/Auth/token'
+import token from '../redux/reducer/Auth/token';
 import navbar from './Navbar.module.css';
 import logo from '../assets/img/marriott-logo-mobile.png';
 
@@ -47,7 +47,7 @@ const NavBar = () => {
     <>
       {tokenSet
       && (
-      <div className='sidebar'>
+      <div className="sidebar">
         <nav className={navbar.nav}>
           <div role="presentation" className={`${navbar.menuIcon} ${isOpen ? navbar.open : ''}`} onClick={toggleMenu}>
             <div id={`${isOpen ? '' : menuClass}`} className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.firstBar : ''}`} />

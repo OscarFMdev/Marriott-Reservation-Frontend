@@ -44,7 +44,9 @@ const DeleteRoomForm = () => {
                 </td>
                 <td>{room.name}</td>
                 <td>
-                  <button onClick={handleSubmit(room.id)} className={table.deleteCancelBtn}>Delete</button>
+                  <button type="button" onClick={handleSubmit(room.id)} className={table.deleteCancelBtn}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))
