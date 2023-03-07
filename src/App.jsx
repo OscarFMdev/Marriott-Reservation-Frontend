@@ -26,12 +26,7 @@ const App = () => {
   dispatch(fetchRooms());
   return (
     <div className="container">
-      {tokenSet
-      && (
-      <div className="sidebar">
-        <Navbar />
-      </div>
-      )}
+      <Navbar />
       <main className="content">
         <Routes>
           {!tokenSet ? (
