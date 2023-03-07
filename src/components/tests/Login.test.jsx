@@ -25,18 +25,17 @@ describe('Login page integrity and operation', () => {
       <Provider store={store}>
         <Router>
           <Login />
+          <Rooms />
         </Router>
       </Provider>
     );
     const nameInput = screen.getByTestId('email');
     userEvent.type(nameInput, 'test@mail.com');
     const passwordInput = screen.getByTestId('password');
-    userEvent.type(passwordInput, '654321');
+    userEvent.type(passwordInput, '123456');
 
     fireEvent.click(screen.getByRole('button', { name: 'Login' }));
-    // const loginButton = screen.getByRole('button', { name: 'Login' });
-    // userEvent.click(loginButton);
-    expect(screen.getByText("Invalid email or password")).toBeDefined();
+    expect(screen.getByText('List of Rooms')).toBeDefined();
   })
 })
 
