@@ -44,8 +44,8 @@ const Details = () => {
           <div className={dstl.btn}>
 
             <div className={dstl.btn_end_5}>
-              <Link to="/Booking">
-                <Button type="button" label="Reserve" className={dstl.btn_color} />
+              <Link to={`/Booking/${room.id}`}>
+                <Button type="button" label="Reserve"  className={dstl.btn_color} />
               </Link>
             </div>
             <div className={dstl.btn_start}>
