@@ -52,6 +52,11 @@ tbody tr:nth-child(even) {
   animation: fadeIn 0.5s;
 }
 
+.roomImage {
+  height: 100px;
+  width: auto;
+}
+
 @keyframes fadeIn {
   from {
     height: 0;

@@ -40,7 +40,7 @@ const DeleteRoomForm = () => {
             rooms.rooms.map((room) => (
               <tr key={room.id}>
                 <td>
-                  <img src={room.image} alt="" />
+                  <img src={room.image} alt="hotel room" className={table.roomImage} />
                 </td>
                 <td>{room.name}</td>
                 <td>
