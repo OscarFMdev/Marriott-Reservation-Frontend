@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { bookRoom, addBook } from '../../redux/reducer/reservation/reservationSlice';
@@ -39,6 +39,14 @@ function ReservationForm() {
     dispatch(bookRoom(bookingObject));
     dispatch(addBook(bookingObject));
   };
+
+  const handleNavigation = () => {
+    if (message === 'Room Booked Successfully') window.location.href = '/mybookings';
+  };
+
+  useEffect(() => {
+    handleNavigation();
+  }, [message]);
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
