@@ -26,12 +26,8 @@ const App = () => {
   dispatch(fetchRooms());
   return (
     <div className="container">
-      {tokenSet
-      && (
-      <div className="sidebar">
-        <Navbar />
-      </div>
-      )}
+      <Navbar />
+
       <main className="content">
         <Routes>
           {!tokenSet ? (
@@ -48,6 +44,7 @@ const App = () => {
           <Route path="/carousel" element={<Carousel />} />
           <Route element={<ProtectRoutes />}>
             <Route path="/booking" element={<Bookingpage />} />
+            <Route path="/booking/:id" element={<Bookingpage />} />
             <Route path="/mybookings" element={<MyBookingspage />} />
             <Route path="/addroom" element={<AddRoompage />} />
             <Route path="/deleteroom" element={<DeleteRoompage />} />
@@ -57,4 +54,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;

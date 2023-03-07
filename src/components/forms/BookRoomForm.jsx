@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { bookRoom, addBook } from '../../redux/reducer/reservation/reservationSlice';
 import form from './Form.module.css';
 
 function ReservationForm() {
+  const params = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [hotels, setHotels] = useState([]);
+  const user = useSelector((state) => state.auth);
+  const { message, error } = useSelector((state) => state.reservations);
+  const rooms = useSelector((state) => state.rooms.rooms);
   const [formData, setFormData] = useState({
-    hotelId: '',
+    hotelId: params.id || '',
     startDate: '',
     endDate: '',
   });
 
-  useEffect(() => {
-    fetch('http://localhost:3000/api/v1/rooms')
-      .then((response) => response.json())
-      .then((data) => setHotels(data))
-      .catch((error) => console.error(error));
-  }, []);
+  if (!user) navigate('/login');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -25,24 +26,28 @@ function ReservationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const bookingData = {
+    const booking = {
       room_id: formData.hotelId,
       start_date: formData.startDate,
       end_date: formData.endDate,
     };
-    fetch('http://127.0.0.1:3000/api/v1/users/6/bookings', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-      body: JSON.stringify({ booking: bookingData }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
-    navigate('/mybookings');
+
+    const bookingObject = {
+      booking,
+      userId: user.id,
+    };
+
+    dispatch(bookRoom(bookingObject));
+    dispatch(addBook(bookingObject));
   };
+
+  const handleNavigation = () => {
+    if (message === 'Room Booked Successfully') window.location.href = '/mybookings';
+  };
+
+  useEffect(() => {
+    handleNavigation();
+  }, [message]);
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
@@ -53,6 +58,8 @@ function ReservationForm() {
         There are 3 room models in this Marriott Hotel: Single, Double and Suite.
         If you want to live the Marriott experience fill this form!
       </p>
+      <p style={{ color: 'green' }}>{ !message ? null : message }</p>
+      <p style={{ color: 'red' }}>{ !error ? null : error }</p>
       <div className={form.inputsContainer}>
 
         <div className={form.fieldBook}>
@@ -61,13 +68,29 @@ function ReservationForm() {
             name="hotelId"
             value={formData.hotelId}
             onChange={handleInputChange}
+            required
           >
             <option value="">-- Select a hotel --</option>
-            {hotels.map((hotel) => (
-              <option key={hotel.id} value={hotel.id}>
-                {hotel.name}
-              </option>
-            ))}
+            {params.id
+
+              ? (
+
+                <option value={params.id}>
+                  {rooms.filter((room) => room.id === parseInt(params.id, 10))[0].name}
+                </option>
+              )
+
+              : (
+
+                rooms.map((room) => (
+
+                  <option key={room.id} value={room.id}>
+                    {room.name}
+                  </option>
+
+                ))
+              )}
+
           </select>
         </div>
         <div className={form.fieldBook}>
@@ -78,6 +101,7 @@ function ReservationForm() {
               name="startDate"
               value={formData.startDate}
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
@@ -90,6 +114,7 @@ function ReservationForm() {
                 name="endDate"
                 value={formData.endDate}
                 onChange={handleInputChange}
+                required
               />
             </label>
           </div>
