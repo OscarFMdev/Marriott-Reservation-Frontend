@@ -20,8 +20,15 @@ exports[`Add Rooms renders correctly 1`] = `
       className="_details_6d2414"
     >
        
-      Welcome Admin! Help this page grow by adding new rooms. You can add a new room by completing the following form:
+      Welcome! Help this page grow by adding new rooms. You can add a new room by completing the following form:
     </p>
+    <p
+      style={
+        {
+          "color": "red",
+        }
+      }
+    />
     <div
       className="_inputsContainer_6d2414 _center_6d2414"
     >
@@ -35,6 +42,7 @@ exports[`Add Rooms renders correctly 1`] = `
             id="name"
             onChange={[Function]}
             placeholder="Hotel room name"
+            required={true}
             type="text"
             value=""
           />
@@ -50,6 +58,7 @@ exports[`Add Rooms renders correctly 1`] = `
             id="image"
             onChange={[Function]}
             placeholder="Image URL"
+            required={true}
             type="text"
             value=""
           />
@@ -65,6 +74,7 @@ exports[`Add Rooms renders correctly 1`] = `
             id="description"
             onChange={[Function]}
             placeholder="Description"
+            required={true}
             value=""
           />
         </label>
@@ -77,8 +87,10 @@ exports[`Add Rooms renders correctly 1`] = `
         >
           <input
             id="price"
+            min={50}
             onChange={[Function]}
             placeholder="Price"
+            required={true}
             type="number"
             value=""
           />
@@ -93,6 +105,7 @@ exports[`Add Rooms renders correctly 1`] = `
           <select
             id="roomType"
             onChange={[Function]}
+            required={true}
             value=""
           >
             <option

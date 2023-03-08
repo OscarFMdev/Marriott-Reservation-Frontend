@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBookings, deleteBooking, popBook } from '../redux/reducer/reservation/reservationSlice';
 import { setMessageEmpty } from '../redux/reducer/Rooms/roomSlice';
-import mybookings from './TableStyles.module.css';
+import mybookings from './componentsCss/TableStyles.module.css';
 
 const MyBookings = () => {
   const { message, bookings } = useSelector((state) => state.reservations);

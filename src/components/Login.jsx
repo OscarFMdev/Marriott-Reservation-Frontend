@@ -34,7 +34,7 @@ const Login = () => {
     <div className="p-grid p-justify-center">
       <div className="p-col-12 p-md-8 p-lg-6">
         <div className={stl.card}>
-          <p>{message}</p>
+          { !message ? null : <p className={stl.success}>{message}</p>}
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="p-field pb-2">

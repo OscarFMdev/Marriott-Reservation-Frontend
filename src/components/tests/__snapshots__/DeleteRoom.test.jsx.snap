@@ -3,13 +3,10 @@
 exports[`Delete Rooms renders correctly 1`] = `
 <div>
   <main
-    className="_container_9aa9cd"
+    className="_container_ca1eb0"
   >
     <h1>
       Loading...
-    </h1>
-    <h1>
-      No Rooms
     </h1>
     <h1>
       Delete Rooms

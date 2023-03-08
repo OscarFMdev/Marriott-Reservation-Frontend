@@ -52,13 +52,13 @@ function ReservationForm() {
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
       <div className={form.hotel} />
+      { !message ? null : <p className={form.success}>{message}</p>}
       <h1 className={form.header}>Book a Marriott Hotel Room</h1>
       <p className={form.details}>
         Marriott is the largest hotel chain in the world.
         There are 3 room models in this Marriott Hotel: Single, Double and Suite.
         If you want to live the Marriott experience fill this form!
       </p>
-      <p style={{ color: 'green' }}>{ !message ? null : message }</p>
       <p style={{ color: 'red' }}>{ !error ? null : error }</p>
       <div className={form.inputsContainer}>
 

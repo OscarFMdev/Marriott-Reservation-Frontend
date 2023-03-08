@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { Button } from 'primereact/button';
 import dstl from './componentsCss/Details.module.css';
 
 const Details = () => {
@@ -10,12 +9,12 @@ const Details = () => {
 
   return (
     <div>
-      <h1>Room&apos;s Details</h1>
+      <h1 className={dstl.header}>Room&apos;s Details</h1>
       <div className={dstl.container}>
         <div>
           <div className={dstl.card_container}>
             <div className={dstl.flex1}>
-              <img src={room.image} alt="" />
+              <img src={room.image} alt="" className={dstl.image} />
             </div>
             <div className={dstl.details}>
 
@@ -31,7 +30,7 @@ const Details = () => {
               </div>
 
               <div>
-                <h4>Descrition:</h4>
+                <h4>Description:</h4>
                 <p>{room.description}</p>
               </div>
 
@@ -45,12 +44,12 @@ const Details = () => {
 
             <div className={dstl.btn_end_5}>
               <Link to={`/Booking/${room.id}`}>
-                <Button type="button" label="Reserve" className={dstl.btn_color} />
+                <button type="button" label="Reserve" className={dstl.btn_color}>Reserve</button>
               </Link>
             </div>
             <div className={dstl.btn_start}>
               <Link to="/rooms">
-                <Button type="button" label="Back" className={dstl.btn_color} />
+                <button type="button" label="Back" className={dstl.btn_color}>Back </button>
               </Link>
             </div>
           </div>

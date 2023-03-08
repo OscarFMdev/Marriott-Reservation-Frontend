@@ -1,7 +1,6 @@
 .room_container {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
 }
 
 .container {
@@ -10,6 +9,10 @@
   height: 80vh;
   background-color: #fff;
   align-content: center;
+}
+
+.title {
+  margin-top: 1rem;
 }
 
 .item_container {
@@ -51,4 +54,8 @@
   gap: 10%;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.image {
+  border-radius: 40px;
 }
