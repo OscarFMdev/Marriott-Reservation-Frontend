@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import form from './Form.module.css';
 import { addRoom, NewRoom } from '../../redux/reducer/Rooms/roomSlice';
 
@@ -12,6 +12,7 @@ const AddRoomForm = () => {
   const [price, setPrice] = useState('');
   const [roomType, setRoomType] = useState('');
   const dispatch = useDispatch();
+  const { message } = useSelector((state) => state.rooms);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,8 +31,15 @@ const AddRoomForm = () => {
     setDescription('');
     setPrice('');
     setRoomType('');
-    navigate('/rooms');
   };
+
+  const handleNavigation = () => {
+    if (message === 'Room Created Successfully') navigate('/rooms');
+  };
+
+  useEffect(() => {
+    handleNavigation();
+  }, [message]);
 
   return (
     <form onSubmit={handleSubmit} className={form.formContainer}>
