@@ -68,7 +68,7 @@ const Login = () => {
             </div>
             <Button type="submit" label="Login" className="bg-green-500 border-200" />
             <p>
-              Don't Have an Account?
+              Do not Have an Account?
               <span>
                 <NavLink to="/signup"> Sign Up</NavLink>
               </span>

@@ -1,10 +1,10 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import Rooms from '../Rooms'
-import store from '../../redux/configureStore'
+import Rooms from '../Rooms';
+import store from '../../redux/configureStore';
 
 describe('It displays the Roooms title', () => {
   beforeEach(() => {
@@ -13,13 +13,13 @@ describe('It displays the Roooms title', () => {
         <Router>
           <Rooms />
         </Router>
-      </Provider>
+      </Provider>,
     );
-  })
+  });
   test('List of Rooms', () => {
     expect(screen.getByText('Available Rooms')).toBeDefined();
-  })
-})
+  });
+});
 
 test('Rooms renders correctly', () => {
   const tree = renderer.create(
@@ -27,7 +27,7 @@ test('Rooms renders correctly', () => {
       <Router>
         <Rooms />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

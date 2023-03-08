@@ -1,12 +1,12 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 
-import Login from '../Login'
-import Rooms from '../Rooms'
-import store from '../../redux/configureStore'
+import Login from '../Login';
+import Rooms from '../Rooms';
+import store from '../../redux/configureStore';
 
 describe('Login page integrity and operation', () => {
   test('Login title and button', () => {
@@ -15,10 +15,10 @@ describe('Login page integrity and operation', () => {
         <Router>
           <Login />
         </Router>
-      </Provider>
+      </Provider>,
     );
     expect(screen.queryAllByText(/Login/, { exact: true })).toHaveLength(2);
-  })
+  });
 
   test('Login operation with wrong credentials', () => {
     render(
@@ -27,7 +27,7 @@ describe('Login page integrity and operation', () => {
           <Login />
           <Rooms />
         </Router>
-      </Provider>
+      </Provider>,
     );
     const nameInput = screen.getByTestId('email');
     userEvent.type(nameInput, 'test@mail.com');
@@ -36,8 +36,8 @@ describe('Login page integrity and operation', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Login' }));
     expect(screen.getByText('Available Rooms')).toBeDefined();
-  })
-})
+  });
+});
 
 test('Login renders correctly', () => {
   const tree = renderer.create(
@@ -45,7 +45,7 @@ test('Login renders correctly', () => {
       <Router>
         <Login />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

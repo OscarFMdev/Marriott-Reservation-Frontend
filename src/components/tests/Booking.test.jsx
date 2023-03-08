@@ -1,10 +1,10 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import Booking from '../Booking'
-import store from '../../redux/configureStore'
+import Booking from '../Booking';
+import store from '../../redux/configureStore';
 
 describe('It displays the Booking page title', () => {
   beforeEach(() => {
@@ -13,13 +13,13 @@ describe('It displays the Booking page title', () => {
         <Router>
           <Booking />
         </Router>
-      </Provider>
+      </Provider>,
     );
-  })
+  });
   test('Booking title', () => {
     expect(screen.getByText('Book a Marriott Hotel Room')).toBeDefined();
-  })
-})
+  });
+});
 
 test('Booking page renders correctly', () => {
   const tree = renderer.create(
@@ -27,7 +27,7 @@ test('Booking page renders correctly', () => {
       <Router>
         <Booking />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -2,8 +2,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
-import Navbar from '../Navbar'
-import store from '../../redux/configureStore'
+import Navbar from '../Navbar';
+import store from '../../redux/configureStore';
 
 test('Navbar renders correctly', () => {
   const tree = renderer.create(
@@ -11,7 +11,7 @@ test('Navbar renders correctly', () => {
       <Router>
         <Navbar />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -1,10 +1,10 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import DeleteRoom from '../DeleteRoom'
-import store from '../../redux/configureStore'
+import DeleteRoom from '../DeleteRoom';
+import store from '../../redux/configureStore';
 
 describe('It displays the Delete Rooom page title', () => {
   beforeEach(() => {
@@ -13,13 +13,13 @@ describe('It displays the Delete Rooom page title', () => {
         <Router>
           <DeleteRoom />
         </Router>
-      </Provider>
+      </Provider>,
     );
-  })
+  });
   test('Delete Room', () => {
     expect(screen.getByText('Delete Rooms')).toBeDefined();
-  })
-})
+  });
+});
 
 test('Delete Rooms renders correctly', () => {
   const tree = renderer.create(
@@ -27,7 +27,7 @@ test('Delete Rooms renders correctly', () => {
       <Router>
         <DeleteRoom />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

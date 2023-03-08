@@ -2,8 +2,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
-import Carousel from '../Carousel'
-import store from '../../redux/configureStore'
+import Carousel from '../Carousel';
+import store from '../../redux/configureStore';
 
 test('Carousel renders correctly', () => {
   const tree = renderer.create(
@@ -11,7 +11,7 @@ test('Carousel renders correctly', () => {
       <Router>
         <Carousel />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

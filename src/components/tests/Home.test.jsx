@@ -12,10 +12,10 @@ describe('It displays the homepage title', () => {
   test('Homepage title', () => {
     render(
       <Provider store={store}>
-       <Router>
+        <Router>
           <Home />
         </Router>
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByText('The new Marriott Hotel')).toBeDefined();
   });
@@ -35,7 +35,7 @@ describe('Test redirection of the login and signup buttons', () => {
   });
   test('Log in Redirection', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Log in' }));
-    expect(screen.getByText("Don't Have an Account?")).toBeDefined();
+    expect(screen.getByText('Do not Have an Account?')).toBeDefined();
   });
   test('Sign Up Redirection', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Sign up' }));
@@ -48,7 +48,8 @@ test('Home Page renders correctly', () => {
     <Provider store={store}>
       <Router>
         <Home />
-      </Router>h
+      </Router>
+      h
     </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();

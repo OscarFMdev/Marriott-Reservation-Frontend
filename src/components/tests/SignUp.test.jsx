@@ -1,10 +1,10 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import SignUp from '../SignUp'
-import store from '../../redux/configureStore'
+import SignUp from '../SignUp';
+import store from '../../redux/configureStore';
 
 describe('It displays the Sign Up two times', () => {
   beforeEach(() => {
@@ -13,14 +13,14 @@ describe('It displays the Sign Up two times', () => {
         <Router>
           <SignUp />
         </Router>
-      </Provider>
+      </Provider>,
     );
-  })
+  });
 
   test('Sign Up title and button', () => {
     expect(screen.queryAllByText(/Sign Up/, { exact: true })).toHaveLength(2);
-  })
-})
+  });
+});
 
 test('Sign Up renders correctly', () => {
   const tree = renderer.create(
@@ -28,7 +28,7 @@ test('Sign Up renders correctly', () => {
       <Router>
         <SignUp />
       </Router>
-    </Provider>
+    </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

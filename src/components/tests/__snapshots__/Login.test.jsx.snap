@@ -85,7 +85,7 @@ exports[`Login renders correctly 1`] = `
           </span>
         </button>
         <p>
-          Don't Have an Account?
+          Do not Have an Account?
           <span>
             <a
               className=""
