@@ -123,6 +123,7 @@ const roomsSlice = createSlice({
         ...state,
         status: 'success',
         rooms: state.rooms.filter((room) => room.id !== action.payload),
+        message: action.payload.message,
       }))
       .addCase(deleteRoom.rejected, (state, action) => ({
         ...state,

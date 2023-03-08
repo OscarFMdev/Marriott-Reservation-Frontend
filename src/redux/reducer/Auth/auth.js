@@ -23,7 +23,6 @@ export const signUp = createAsyncThunk(SIGNUP, async (user) => {
 
   const { status: code } = response;
   if (code === 200) {
-    localStorage.setItem('token', response.headers.get('Authorization'));
     const { data, message } = await response.json();
     return {
       status: 'success',
@@ -110,7 +109,12 @@ export const getUser = createAsyncThunk(
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    setMessageEmpty: (state, action) => ({
+      ...state,
+      message: action.payload,
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(signUp.pending, (state) => ({
