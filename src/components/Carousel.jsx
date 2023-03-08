@@ -48,7 +48,7 @@ const Carousel = () => {
                 <p className="">{room.type}</p>
                 <div className={stl.img_container}>
                   <Link to={`/Details/${room.name}`}>
-                    <img src={room.image} alt="" />
+                    <img src={room.image} alt="hotel room" className={stl.image} />
                   </Link>
                 </div>
               </div>

@@ -14,7 +14,7 @@ const Details = () => {
         <div>
           <div className={dstl.card_container}>
             <div className={dstl.flex1}>
-              <img src={room.image} alt="" />
+              <img src={room.image} alt="" className={dstl.image} />
             </div>
             <div className={dstl.details}>
 

@@ -19,9 +19,9 @@
 }
 
 .success {
-  background: rgb(73, 82, 68);
+  background: var(--blue);
   width: 80vw;
-  color: green;
+  color: white;
   position: absolute;
   top: 10px;
   padding: 10px 0;
