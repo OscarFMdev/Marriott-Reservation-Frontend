@@ -17,7 +17,7 @@ describe('It displays the Roooms title', () => {
     );
   })
   test('List of Rooms', () => {
-    expect(screen.getByText('List of Rooms')).toBeDefined();
+    expect(screen.getByText('Available Rooms')).toBeDefined();
   })
 })
 

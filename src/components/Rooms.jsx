@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import Carousel from './Carousel';
+import stl from './componentsCss/Carousel.module.css';
 
 const Rooms = () => {
   const rooms = useSelector((state) => state.rooms);
@@ -7,8 +8,8 @@ const Rooms = () => {
     return <i className="pi pi-spin pi-spinner" style={{ fontSize: '4rem' }} />;
   }
   return (
-    <div>
-      <p>List of Rooms</p>
+    <div className={stl.room_container}>
+      <h2>Available Rooms</h2>
       <Carousel />
     </div>
   );

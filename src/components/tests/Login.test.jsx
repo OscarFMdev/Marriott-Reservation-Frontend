@@ -35,7 +35,7 @@ describe('Login page integrity and operation', () => {
     userEvent.type(passwordInput, '123456');
 
     fireEvent.click(screen.getByRole('button', { name: 'Login' }));
-    expect(screen.getByText('List of Rooms')).toBeDefined();
+    expect(screen.getByText('Available Rooms')).toBeDefined();
   })
 })
 
