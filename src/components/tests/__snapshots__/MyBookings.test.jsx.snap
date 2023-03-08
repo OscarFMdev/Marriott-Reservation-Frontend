@@ -98,3 +98,42 @@ exports[`Booking page renders correctly 1`] = `
   </form>
 </div>
 `;
+
+exports[`My Bookings page renders correctly 1`] = `
+<main
+  className="_container_9aa9cd"
+>
+  <h1>
+    My Bookings
+  </h1>
+  <table
+    className=""
+  >
+    <thead>
+      <tr>
+        <th>
+          Room Name
+        </th>
+        <th>
+          Check-in Date
+        </th>
+        <th>
+          Check-out Date
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          colSpan="4"
+        >
+          You have no bookings
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+`;
