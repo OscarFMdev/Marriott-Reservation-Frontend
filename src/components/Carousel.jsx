@@ -57,8 +57,8 @@ const Carousel = () => {
           </div>
         ))}
         <div className={stl.action}>
-          <Button icon="pi pi-chevron-left" onClick={prevSlide} className={dstl.btn_color} />
-          <Button icon="pi pi-chevron-right" onClick={nextSlide} className={dstl.btn_color} />
+          <button icon="pi pi-chevron-left" onClick={prevSlide} className={dstl.btn_color}>&lt;</button>
+          <button icon="pi pi-chevron-right" onClick={nextSlide} className={dstl.btn_color}>&gt;</button>
         </div>
       </div>
     </section>
