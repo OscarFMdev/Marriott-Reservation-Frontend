@@ -42,7 +42,7 @@ test('Home Page renders correctly', () => {
     <Provider store={store}>
       <Router>
         <Home />
-      </Router>
+      </Router>h
     </Provider>,
   ).toJSON();
   expect(tree).toMatchSnapshot();

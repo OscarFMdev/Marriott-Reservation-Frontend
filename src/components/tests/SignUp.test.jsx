@@ -8,7 +8,7 @@ import store from '../../redux/configureStore'
 
 describe('It displays the Sign Up two times', () => {
   beforeEach(() => {
-    const { getByLabelText, getByText } = render(
+    render(
       <Provider store={store}>
         <Router>
           <SignUp />

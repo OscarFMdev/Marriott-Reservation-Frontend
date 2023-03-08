@@ -1,40 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Home Page renders correctly 1`] = `
-<div
-  className="_background_476e65"
->
-  <img
-    alt="Logo"
-    className="_hotel_476e65"
-    src="/src/assets/img/marriott-wobg.png"
-  />
-  <h1
-    className="_header_476e65"
+[
+  <div
+    className="_background_476e65"
   >
-    The new Marriott Hotel
-  </h1>
-  <a
-    href="/login"
-    onClick={[Function]}
-  >
-    <button
-      className="_loginBtn_476e65"
-      type="button"
+    <img
+      alt="Logo"
+      className="_hotel_476e65"
+      src="/src/assets/img/marriott-wobg.png"
+    />
+    <h1
+      className="_header_476e65"
     >
-      Log in
-    </button>
-  </a>
-  <a
-    href="/signup"
-    onClick={[Function]}
-  >
-    <button
-      className="_signupBtn_476e65"
-      type="button"
+      The new Marriott Hotel
+    </h1>
+    <a
+      href="/login"
+      onClick={[Function]}
     >
-      Sign up
-    </button>
-  </a>
-</div>
+      <button
+        className="_loginBtn_476e65"
+        type="button"
+      >
+        Log in
+      </button>
+    </a>
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      <button
+        className="_signupBtn_476e65"
+        type="button"
+      >
+        Sign up
+      </button>
+    </a>
+  </div>,
+  "h",
+]
 `;
