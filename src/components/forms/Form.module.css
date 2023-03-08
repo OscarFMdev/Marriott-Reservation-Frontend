@@ -20,7 +20,7 @@
 
 .success {
   background: var(--blue);
-  width: 80vw;
+  width: 100vw;
   color: white;
   position: absolute;
   top: 10px;

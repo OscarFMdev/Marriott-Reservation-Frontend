@@ -4,6 +4,11 @@
   height: 100vh;
   background-color: #fff;
   align-content: center;
+  margin-top: 30px;
+}
+
+.header {
+  margin: 20px 0;
 }
 
 .container img {
@@ -32,13 +37,22 @@
   flex: 1;
 }
 
+.details > * {
+  padding: 10px 0;
+}
+
 .even {
   background-color: #E2E3E5;
-  padding: 10px;
 }
 
 .flex1 {
   flex: 1;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
 .btn_end_5 {
@@ -71,6 +85,11 @@
 @media (min-width: 800px) {
   .card_container {
     flex-direction: row;
+  }
+
+  .btn {
+    margin-top: 10px;
+    display: block;
   }
 
 }

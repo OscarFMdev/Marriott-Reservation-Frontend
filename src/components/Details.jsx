@@ -9,7 +9,7 @@ const Details = () => {
 
   return (
     <div>
-      <h1>Room&apos;s Details</h1>
+      <h1 className={dstl.header}>Room&apos;s Details</h1>
       <div className={dstl.container}>
         <div>
           <div className={dstl.card_container}>
