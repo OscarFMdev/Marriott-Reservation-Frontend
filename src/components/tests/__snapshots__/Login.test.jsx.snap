@@ -10,6 +10,7 @@ exports[`Login renders correctly 1`] = `
     <div
       className="_card_ac1e6f"
     >
+      <p />
       <h1>
         Login
       </h1>

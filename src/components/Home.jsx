@@ -4,18 +4,6 @@ import { useSelector } from 'react-redux';
 import img from '../assets/img/marriott-wobg.png';
 import home from './Home.module.css';
 
-const Home = () => (
-  <div className={home.background}>
-    <img src={img} alt="Logo" className={home.hotel} />
-    <h1 className={home.header}>The new Marriott Hotel</h1>
-    <Link to="/login">
-      <button type="button" className={home.loginBtn}>Log in</button>
-    </Link>
-    <Link to="/signup">
-      <button type="button" className={home.signupBtn}>Sign up</button>
-    </Link>
-  </div>
-);
 const Home = () => {
   const { error, message } = useSelector((state) => state.auth);
 
@@ -25,7 +13,7 @@ const Home = () => {
       {message && <p>{error}</p>}
       <h1 className={home.header}>The new Marriott Hotel</h1>
       <Link to="/login">
-        <button type="button" className={home.loginBtn}>Login</button>
+        <button type="button" className={home.loginBtn}>Log in</button>
       </Link>
       <Link to="/signup">
         <button type="button" className={home.signupBtn}>Sign up</button>

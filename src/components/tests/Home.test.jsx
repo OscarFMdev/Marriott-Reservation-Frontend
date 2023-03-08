@@ -10,7 +10,13 @@ import store from '../../redux/configureStore';
 
 describe('It displays the homepage title', () => {
   test('Homepage title', () => {
-    render(<Router><Home /></Router>);
+    render(
+      <Provider store={store}>
+       <Router>
+          <Home />
+        </Router>
+      </Provider>
+    );
     expect(screen.getByText('The new Marriott Hotel')).toBeDefined();
   });
 });
