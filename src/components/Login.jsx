@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
-import { signIn } from '../redux/reducer/Auth/auth';
+import { signIn, getUser } from '../redux/reducer/Auth/auth';
 import stl from './componentsCss/Login.module.css';
 
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { status, message } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +25,7 @@ const Login = () => {
 
   useEffect(() => {
     if (message === 'Logged in succesfully.') {
+      dispatch(getUser());
       navigate('/rooms');
     }
   }, [message, navigate]);
@@ -33,7 +34,7 @@ const Login = () => {
     <div className="p-grid p-justify-center">
       <div className="p-col-12 p-md-8 p-lg-6">
         <div className={stl.card}>
-          { status === 'failed' && <p>{message}</p> }
+          <p>{message}</p>
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="p-field pb-2">
