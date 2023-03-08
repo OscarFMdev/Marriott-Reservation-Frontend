@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import form from './Form.module.css';
 import { addRoom, NewRoom } from '../../redux/reducer/Rooms/roomSlice';
 
 const AddRoomForm = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
@@ -34,7 +34,7 @@ const AddRoomForm = () => {
   };
 
   const handleNavigation = () => {
-    if (message === 'Room Created Successfully') navigate('/rooms');
+    if (message === 'Room Created Successfully') window.location.href = '/Rooms';
   };
 
   useEffect(() => {

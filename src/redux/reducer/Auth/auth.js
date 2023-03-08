@@ -95,6 +95,14 @@ export const getUser = createAsyncThunk(
         data,
       };
     }
+
+    if (code === 401) {
+      return {
+        status: 'failed',
+        message: 'Please login to access this page',
+        error: 'You are not authorized to access this page',
+      };
+    }
     return null;
   },
 );
@@ -142,6 +150,8 @@ export const authSlice = createSlice({
         ...state,
         user: action.payload.data,
         status: action.payload.status,
+        message: action.payload.message,
+        error: action.payload.error,
       }))
       .addCase(getUser.rejected, (state) => ({
         ...state,

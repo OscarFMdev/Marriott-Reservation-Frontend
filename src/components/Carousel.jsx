@@ -11,6 +11,7 @@ const Carousel = () => {
   const rooms = useSelector((state) => state.rooms);
   const [current, setCurrent] = useState(0);
   const { message } = useSelector((state) => state.rooms);
+
   const { length } = rooms.rooms;
 
   const handleMessage = () => {
