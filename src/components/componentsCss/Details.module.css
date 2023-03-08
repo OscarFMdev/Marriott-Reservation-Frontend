@@ -42,7 +42,7 @@
 }
 
 .even {
-  background-color: #E2E3E5;
+  background-color: #e2e3e5;
 }
 
 .flex1 {
@@ -91,5 +91,4 @@
     margin-top: 10px;
     display: block;
   }
-
 }
