@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom';
 import { setMessageEmpty } from '../redux/reducer/Rooms/roomSlice';
 import stl from './componentsCss/Carousel.module.css';
@@ -58,8 +57,8 @@ const Carousel = () => {
           </div>
         ))}
         <div className={stl.action}>
-          <Button icon="pi pi-chevron-left" onClick={prevSlide} className={dstl.btn_color} />
-          <Button icon="pi pi-chevron-right" onClick={nextSlide} className={dstl.btn_color} />
+          <button icon="pi pi-chevron-left" onClick={prevSlide} className={dstl.btn_color} type="button">&lt;</button>
+          <button icon="pi pi-chevron-right" onClick={nextSlide} className={dstl.btn_color} type="button">&gt;</button>
         </div>
       </div>
     </section>

@@ -75,6 +75,7 @@ const SignUp = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                label="password"
                 placeholder="Password"
                 required
                 toggleMask
@@ -86,6 +87,7 @@ const SignUp = () => {
                 id="password_confirmation"
                 value={password_confirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
+                label="passconf"
                 placeholder="Password"
                 required
                 feedback={false}

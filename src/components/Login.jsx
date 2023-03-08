@@ -45,7 +45,7 @@ const Login = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  label="Email"
+                  data-testid="email"
                   placeholder="Email"
                   required
                 />
@@ -58,6 +58,7 @@ const Login = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                data-testid="password"
                 placeholder="Password"
                 required
                 feedback={false}
@@ -67,7 +68,7 @@ const Login = () => {
             </div>
             <Button type="submit" label="Login" className="bg-green-500 border-200" />
             <p>
-              Don`&apos;`t Have an Account?
+              Do not Have an Account?
               <span>
                 <NavLink to="/signup"> Sign Up</NavLink>
               </span>

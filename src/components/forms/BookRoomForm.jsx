@@ -70,7 +70,7 @@ function ReservationForm() {
             onChange={handleInputChange}
             required
           >
-            <option value="">-- Select a hotel --</option>
+            <option value="">-- Select a Room --</option>
             {params.id
 
               ? (

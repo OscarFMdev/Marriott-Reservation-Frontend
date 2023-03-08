@@ -6,7 +6,6 @@ import mybookings from './TableStyles.module.css';
 
 const MyBookings = () => {
   const { message, bookings } = useSelector((state) => state.reservations);
-  // const { rooms } = useSelector((state) => state.rooms);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 

@@ -27,7 +27,6 @@ const App = () => {
   return (
     <div className="container">
       <Navbar />
-
       <main className="content">
         <Routes>
           {!tokenSet ? (
