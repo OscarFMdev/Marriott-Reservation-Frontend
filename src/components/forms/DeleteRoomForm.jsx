@@ -1,15 +1,27 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteRoom, PopRoom, fetchRooms } from '../../redux/reducer/Rooms/roomSlice';
-import table from '../TableStyles.module.css';
+import {
+  deleteRoom,
+  PopRoom, fetchRooms,
+  setMessageEmpty,
+} from '../../redux/reducer/Rooms/roomSlice';
+import table from '../componentsCss/TableStyles.module.css';
 
 const DeleteRoomForm = () => {
   const rooms = useSelector((state) => state.rooms);
+  const { message } = useSelector((state) => state.rooms);
   const dispatch = useDispatch();
+
+  const handleMessage = () => {
+    setTimeout(() => {
+      if (message === 'Room Deleted Successfully') dispatch(setMessageEmpty(''));
+    }, 3000);
+  };
 
   useEffect(() => {
     dispatch(fetchRooms());
-  }, []);
+    handleMessage();
+  }, [message]);
 
   const handleSubmit = (id) => (e) => {
     e.preventDefault();
@@ -20,8 +32,7 @@ const DeleteRoomForm = () => {
   return (
     <main className={table.container}>
       {rooms.status === 'loading' && <h1>Loading...</h1>}
-      {rooms.status === 'error' && <h1>{rooms.message}</h1>}
-      {rooms.rooms.length === 0 && <h1>No Rooms</h1>}
+      { !message ? null : <p className={table.success}>{message}</p>}
       <h1>Delete Rooms</h1>
       <table>
         <thead>

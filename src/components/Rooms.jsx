@@ -10,7 +10,8 @@ const Rooms = () => {
   }
   return (
     <div className={stl.room_container}>
-      <h2>Available Rooms</h2>
+      <h2 className={stl.title}>Available Rooms</h2>
+      {rooms.rooms.length === 0 && <h1>No Rooms</h1>}
       <Carousel />
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import img from '../assets/img/marriott-wobg.png';
-import home from './Home.module.css';
+import home from './componentsCss/Home.module.css';
 
 const Home = () => {
   const { error, message } = useSelector((state) => state.auth);

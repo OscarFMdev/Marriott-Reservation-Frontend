@@ -3,15 +3,15 @@
 exports[`Home Page renders correctly 1`] = `
 [
   <div
-    className="_background_476e65"
+    className="_background_ca55bd"
   >
     <img
       alt="Logo"
-      className="_hotel_476e65"
+      className="_hotel_ca55bd"
       src="/src/assets/img/marriott-wobg.png"
     />
     <h1
-      className="_header_476e65"
+      className="_header_ca55bd"
     >
       The new Marriott Hotel
     </h1>
@@ -20,7 +20,7 @@ exports[`Home Page renders correctly 1`] = `
       onClick={[Function]}
     >
       <button
-        className="_loginBtn_476e65"
+        className="_loginBtn_ca55bd"
         type="button"
       >
         Log in
@@ -31,7 +31,7 @@ exports[`Home Page renders correctly 1`] = `
       onClick={[Function]}
     >
       <button
-        className="_signupBtn_476e65"
+        className="_signupBtn_ca55bd"
         type="button"
       >
         Sign up

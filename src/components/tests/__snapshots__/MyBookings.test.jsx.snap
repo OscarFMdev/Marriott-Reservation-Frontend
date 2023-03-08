@@ -2,7 +2,7 @@
 
 exports[`My Bookings page renders correctly 1`] = `
 <main
-  className="_container_9aa9cd"
+  className="_container_ca1eb0"
 >
   <h1>
     My Bookings

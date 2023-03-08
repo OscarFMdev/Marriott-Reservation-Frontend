@@ -22,13 +22,6 @@ exports[`Booking page renders correctly 1`] = `
     <p
       style={
         {
-          "color": "green",
-        }
-      }
-    />
-    <p
-      style={
-        {
           "color": "red",
         }
       }

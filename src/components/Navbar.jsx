@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import token from '../redux/reducer/Auth/token';
-import navbar from './Navbar.module.css';
+import navbar from './componentsCss/Navbar.module.css';
 import logo from '../assets/img/marriott-logo-mobile.png';
 
 const handleActive = ({ isActive }) => (isActive
