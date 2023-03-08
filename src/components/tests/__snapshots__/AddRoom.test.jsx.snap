@@ -1,0 +1,257 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Add Rooms renders correctly 1`] = `
+<div
+  className="page"
+>
+  <form
+    className="_formContainer_6d2414"
+    onSubmit={[Function]}
+  >
+    <div
+      className="_hotel_6d2414"
+    />
+    <h1
+      className="_header_6d2414"
+    >
+      Add Room
+    </h1>
+    <p
+      className="_details_6d2414"
+    >
+       
+      Welcome Admin! Help this page grow by adding new rooms. You can add a new room by completing the following form:
+    </p>
+    <div
+      className="_inputsContainer_6d2414 _center_6d2414"
+    >
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="name"
+        >
+          <input
+            id="name"
+            onChange={[Function]}
+            placeholder="Hotel room name"
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="image"
+        >
+          <input
+            id="image"
+            onChange={[Function]}
+            placeholder="Image URL"
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="description"
+        >
+          <textarea
+            id="description"
+            onChange={[Function]}
+            placeholder="Description"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="price"
+        >
+          <input
+            id="price"
+            onChange={[Function]}
+            placeholder="Price"
+            type="number"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="roomType"
+        >
+          <select
+            id="roomType"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              value=""
+            >
+              -- Select a room type --
+            </option>
+            <option
+              value="Single"
+            >
+              Single
+            </option>
+            <option
+              value="Double"
+            >
+              Double
+            </option>
+            <option
+              value="Suite"
+            >
+              Suite
+            </option>
+          </select>
+        </label>
+      </div>
+      <button
+        type="submit"
+      >
+        Add Room
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Rooms renders correctly 1`] = `
+<div
+  className="page"
+>
+  <form
+    className="_formContainer_6d2414"
+    onSubmit={[Function]}
+  >
+    <div
+      className="_hotel_6d2414"
+    />
+    <h1
+      className="_header_6d2414"
+    >
+      Add Room
+    </h1>
+    <p
+      className="_details_6d2414"
+    >
+       
+      Welcome Admin! Help this page grow by adding new rooms. You can add a new room by completing the following form:
+    </p>
+    <div
+      className="_inputsContainer_6d2414 _center_6d2414"
+    >
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="name"
+        >
+          <input
+            id="name"
+            onChange={[Function]}
+            placeholder="Hotel room name"
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="image"
+        >
+          <input
+            id="image"
+            onChange={[Function]}
+            placeholder="Image URL"
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="description"
+        >
+          <textarea
+            id="description"
+            onChange={[Function]}
+            placeholder="Description"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="price"
+        >
+          <input
+            id="price"
+            onChange={[Function]}
+            placeholder="Price"
+            type="number"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_field_6d2414"
+      >
+        <label
+          htmlFor="roomType"
+        >
+          <select
+            id="roomType"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              value=""
+            >
+              -- Select a room type --
+            </option>
+            <option
+              value="Single"
+            >
+              Single
+            </option>
+            <option
+              value="Double"
+            >
+              Double
+            </option>
+            <option
+              value="Suite"
+            >
+              Suite
+            </option>
+          </select>
+        </label>
+      </div>
+      <button
+        type="submit"
+      >
+        Add Room
+      </button>
+    </div>
+  </form>
+</div>
+`;

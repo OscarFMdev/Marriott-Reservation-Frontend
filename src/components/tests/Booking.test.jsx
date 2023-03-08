@@ -3,29 +3,29 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react'
 import renderer from 'react-test-renderer';
 
-import AddRoom from '../AddRoom'
+import Booking from '../Booking'
 import store from '../../redux/configureStore'
 
-describe('It displays the Add Rooom page title', () => {
+describe('It displays the Booking page title', () => {
   beforeEach(() => {
     render(
       <Provider store={store}>
         <Router>
-          <AddRoom />
+          <Booking />
         </Router>
       </Provider>
     );
   })
-  test('Add Room', () => {
-    expect(screen.queryAllByText(/Add Room/, { exact: true })).toHaveLength(2);
+  test('Booking title', () => {
+    expect(screen.getByText('Book a Marriott Hotel Room')).toBeDefined();
   })
 })
 
-test('Add Rooms renders correctly', () => {
+test('Booking page renders correctly', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <Router>
-        <AddRoom />
+        <Booking />
       </Router>
     </Provider>
   ).toJSON();

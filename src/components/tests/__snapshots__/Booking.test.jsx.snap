@@ -1,0 +1,142 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Booking page renders correctly 1`] = `
+<div>
+  <form
+    className="_formContainer_6d2414"
+    onSubmit={[Function]}
+  >
+    <div
+      className="_hotel_6d2414"
+    />
+    <h1
+      className="_header_6d2414"
+    >
+      Book a Marriott Hotel Room
+    </h1>
+    <p
+      className="_details_6d2414"
+    >
+      Marriott is the largest hotel chain in the world. There are 3 room models in this Marriott Hotel: Single, Double and Suite. If you want to live the Marriott experience fill this form!
+    </p>
+    <p
+      style={
+        {
+          "color": "green",
+        }
+      }
+    />
+    <p
+      style={
+        {
+          "color": "red",
+        }
+      }
+    />
+    <div
+      className="_inputsContainer_6d2414"
+    >
+      <div
+        className="_fieldBook_6d2414"
+      >
+        <select
+          id="hotelId"
+          name="hotelId"
+          onChange={[Function]}
+          required={true}
+          value=""
+        >
+          <option
+            value=""
+          >
+            -- Select a hotel --
+          </option>
+        </select>
+      </div>
+      <div
+        className="_fieldBook_6d2414"
+      >
+        <label
+          htmlFor="startDate"
+        >
+          <input
+            id="startDate"
+            name="startDate"
+            onChange={[Function]}
+            required={true}
+            type="date"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="_last_6d2414"
+      >
+        <div
+          className="_fieldBook_6d2414"
+        >
+          <label
+            htmlFor="endDate"
+          >
+            <input
+              id="endDate"
+              name="endDate"
+              onChange={[Function]}
+              required={true}
+              type="date"
+              value=""
+            />
+          </label>
+        </div>
+        <button
+          type="submit"
+        >
+          Book now
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Delete Rooms renders correctly 1`] = `
+<div>
+  <main
+    className="_container_9aa9cd"
+  >
+    <h1>
+      Loading...
+    </h1>
+    <h1>
+      No Rooms
+    </h1>
+    <h1>
+      Delete Rooms
+    </h1>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Image
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            colSpan="3"
+          >
+            You have no rooms
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+`;
