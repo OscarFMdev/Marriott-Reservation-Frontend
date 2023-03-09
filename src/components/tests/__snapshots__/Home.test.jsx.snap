@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home Page renders correctly 1`] = `
+[
+  <div
+    className="_background_ca55bd"
+  >
+    <img
+      alt="Logo"
+      className="_hotel_ca55bd"
+      src="/src/assets/img/marriott-wobg.png"
+    />
+    <h1
+      className="_header_ca55bd"
+    >
+      The new Marriott Hotel
+    </h1>
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      <button
+        className="_loginBtn_ca55bd"
+        type="button"
+      >
+        Log in
+      </button>
+    </a>
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      <button
+        className="_signupBtn_ca55bd"
+        type="button"
+      >
+        Sign up
+      </button>
+    </a>
+  </div>,
+  "h",
+]
+`;

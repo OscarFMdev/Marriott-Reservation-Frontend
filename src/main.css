@@ -1,0 +1,43 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lexend Deca', sans-serif;
+  text-decoration: none;
+}
+
+#white-bars {
+  background-color: white;
+}
+
+.progressSpinner {
+  margin-top: 40vh;
+}
+
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    width: 100vw;
+  }
+
+  .sidebar {
+    width: 20vw;
+    background-color: #ccc;
+    box-sizing: border-box;
+  }
+
+  .content {
+    flex: 1;
+    box-sizing: border-box;
+  }
+}

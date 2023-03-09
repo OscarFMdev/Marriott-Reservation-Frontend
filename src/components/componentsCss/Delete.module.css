@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 70px;
+  font-size: 15px;
+  padding: 20px;
+  background: #11bbb5;
+}
+
+.bg {
+  background: #11bbb5;
+}
+
+.bg :nth-child(even) {
+  background: #fff;
+}
+
+.container img {
+  height: 50px;
+  width: 70px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  background: none;
+}

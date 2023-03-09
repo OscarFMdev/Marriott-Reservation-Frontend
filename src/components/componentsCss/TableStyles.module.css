@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+th {
+  color: white;
+}
+
+th,
+td {
+  padding: 12px;
+}
+
+table {
+  background-color: #11bbb5;
+  border-radius: 30px;
+  width: 40vw;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+tbody tr:nth-child(even) {
+  color: white;
+}
+
+.deleteCancelBtn {
+  background-color: red;
+  border-style: none;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.success {
+  background: rgb(27, 218, 27);
+  width: 100vw;
+  color: white;
+  position: absolute;
+  padding: 10px 0;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s;
+}
+
+.fadeOut {
+  animation: fadeIn 0.5s;
+}
+
+.roomImage {
+  height: 100px;
+  width: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 45px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    height: 45px;
+  }
+
+  to {
+    height: 0;
+  }
+}

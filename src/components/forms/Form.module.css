@@ -1,0 +1,208 @@
+:root {
+  --green: #95c010;
+  --orange: #ffb400;
+  --blue: #11bbb5;
+}
+
+.formContainer {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #95c010;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.label {
+  text-align: left;
+  font-size: 14px;
+}
+
+.success {
+  background: var(--blue);
+  width: 100vw;
+  color: white;
+  position: absolute;
+  top: 10px;
+  padding: 10px 0;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s;
+}
+
+.fadeOut {
+  animation: fadeIn 0.5s;
+}
+
+.center {
+  align-items: center;
+}
+
+.header {
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+.details {
+  margin: 10px 10vw;
+  font-size: 14px;
+}
+
+.formContainer > *:not(.hotel) {
+  z-index: 2;
+}
+
+.hotel {
+  background-image: url('../../assets/img/hotel-room-2.webp');
+  background-position: center;
+  position: absolute;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  opacity: 0.4;
+  overflow: hidden;
+  scale: 1;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field,
+.fieldBook {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.fieldBook {
+  margin-top: 5vh;
+}
+
+.fieldBook:last-of-type {
+  margin-bottom: 5vh;
+}
+
+.field select,
+.field input[type="text"],
+.field input[type="number"],
+.field textarea,
+.fieldBook input[type="date"],
+.fieldBook input[type="text"],
+.fieldBook select {
+  height: 35px;
+  border-radius: 10px;
+  background-color: var(--green);
+  border: solid white 1px;
+  color: white;
+  width: 40vw;
+  max-width: 350px;
+  min-width: 200px;
+  padding: 1px 12px;
+}
+
+.field textarea {
+  border-radius: 20px;
+  height: 10vh;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(225, 225, 225);
+}
+
+.field input[type="text"]:focus,
+.field input[type="number"]:focus,
+.field textarea:focus,
+.fieldBook input[type="date"]:focus,
+.fieldBook input[type="text"]:focus {
+  color: black;
+  background-color: white;
+  transition: ease-in 0.5s;
+}
+
+.formContainer button[type="submit"] {
+  width: 180px;
+  background-color: white;
+  color: var(--green);
+  font-weight: 700;
+  height: 45px;
+  margin-top: 6px;
+  border-radius: 18px;
+  border-style: none;
+}
+
+.formContainer button[type="submit"]:hover {
+  background-color: var(--blue);
+  color: white;
+  transition: ease-in 0.5s;
+  border: 1px dotted white;
+}
+
+@media screen and (min-width: 800px) {
+  .formContainer {
+    margin: 0;
+    height: 100vh;
+    border-radius: 0;
+    background-size: contain;
+  }
+
+  .hotel {
+    left: 20vw;
+    width: auto;
+    height: 100vh;
+    scale: 2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .fieldBook {
+    margin-top: 10px;
+  }
+
+  .last {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .last button[type="submit"] {
+    width: 300px;
+    max-width: none;
+    background-color: white;
+    color: var(--green);
+    font-weight: 700;
+    height: 45px;
+    margin-top: 6px;
+    margin-left: -50px;
+  }
+
+  .inputsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  label {
+    width: fit-content;
+  }
+
+  .header {
+    font-size: 30px;
+  }
+
+  .details {
+    font-size: 17px;
+    font-weight: 700;
+  }
+}

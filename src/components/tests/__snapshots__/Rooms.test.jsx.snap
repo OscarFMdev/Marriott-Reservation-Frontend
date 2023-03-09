@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Rooms renders correctly 1`] = `
+<div
+  className="_room_container_428451"
+>
+  <h2
+    className="_title_428451"
+  >
+    Available Rooms
+  </h2>
+  <h1>
+    No Rooms
+  </h1>
+</div>
+`;

@@ -1,0 +1,97 @@
+:root {
+  --green: #95c010;
+  --orange: #ffb400;
+  --blue: #11bbb5;
+}
+
+.background {
+  background-color: var(--orange);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hotel {
+  object-fit: cover;
+  position: absolute;
+  width: 779px;
+  height: 959px;
+  left: -195px;
+  top: 55px;
+}
+
+.header {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 31px;
+  letter-spacing: 0.15em;
+  width: 100vw;
+  margin-bottom: 20px;
+}
+
+.loginBtn,
+.signupBtn {
+  box-sizing: border-box;
+  position: absolute;
+  width: 221px;
+  height: 41px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  cursor: pointer;
+  border-style: none;
+}
+
+.loginBtn {
+  top: 55%;
+  background: var(--green);
+  border-radius: 79px;
+}
+
+.signupBtn {
+  top: 60%;
+  background: var(--blue);
+  border-radius: 79px;
+  margin-top: 30px;
+}
+
+@media only screen and (orientation: landscape) {
+  .header {
+    top: 25%;
+  }
+
+  .signupBtn {
+    top: 66%;
+  }
+}
+
+@media (min-width: 800px) {
+  .hotel {
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header {
+    font-size: 40px;
+  }
+
+  .loginBtn {
+    top: 40%;
+  }
+
+  .signupBtn {
+    top: 48%;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,155 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sign Up renders correctly 1`] = `
+<div
+  className="p-grid p-justify-center"
+>
+  <div
+    className="p-col-12 p-md-8 p-lg-6"
+  >
+    <div
+      className="card"
+    >
+      <h1>
+        Sign Up
+      </h1>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="p-field pb-2"
+        >
+          <span
+            className="p-input-icon-right"
+          >
+            <i
+              className="pi pi-user"
+            />
+            <input
+              className="p-inputtext p-component"
+              id="name"
+              label="Name"
+              onChange={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onPaste={[Function]}
+              placeholder="Full Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </span>
+        </div>
+        <div
+          className="p-field pb-2"
+        >
+          <span
+            className="p-input-icon-right"
+          >
+            <i
+              className="pi pi-envelope"
+            />
+            <input
+              className="p-inputtext p-component"
+              id="email"
+              label="Email"
+              onChange={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onPaste={[Function]}
+              placeholder="Email"
+              required={true}
+              type="email"
+              value=""
+            />
+          </span>
+        </div>
+        <div
+          className="p-field pb-2"
+        >
+          <div
+            className="p-password p-component p-inputwrapper p-input-icon-right"
+            id="password"
+            style={null}
+          >
+            <input
+              className="p-inputtext p-component p-password-input"
+              id={null}
+              label="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onPaste={[Function]}
+              placeholder="Password"
+              required={true}
+              style={null}
+              type="password"
+              value=""
+            />
+            <i
+              className="pi pi-eye"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+        <div
+          className="p-field pb-2"
+        >
+          <div
+            className="p-password p-component p-inputwrapper p-input-icon-right"
+            id="password_confirmation"
+            style={null}
+          >
+            <input
+              className="p-inputtext p-component p-password-input"
+              id={null}
+              label="passconf"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onPaste={[Function]}
+              placeholder="Password"
+              required={true}
+              style={null}
+              type="password"
+              value=""
+            />
+            <i
+              className="pi pi-eye"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+        <button
+          aria-label="Sign Up"
+          className="p-button p-component bg-green-500 border-200"
+          disabled={false}
+          type="submit"
+        >
+          <span
+            className="p-button-label p-c"
+          >
+            Sign Up
+          </span>
+        </button>
+        <p>
+          Already have an account?
+          <a
+            className=""
+            href="/login"
+            onClick={[Function]}
+          >
+            Login
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+`;
