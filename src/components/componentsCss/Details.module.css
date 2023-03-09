@@ -80,6 +80,8 @@
 
 .image {
   border-radius: 10%;
+  width: 40vw;
+  height: auto;
 }
 
 @media (min-width: 800px) {
