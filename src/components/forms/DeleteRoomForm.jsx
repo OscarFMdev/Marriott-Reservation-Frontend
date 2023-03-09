@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ProgressSpinner } from 'primereact/progressspinner';
 import {
   deleteRoom,
   PopRoom, fetchRooms,
@@ -9,7 +10,7 @@ import table from '../componentsCss/TableStyles.module.css';
 
 const DeleteRoomForm = () => {
   const rooms = useSelector((state) => state.rooms);
-  const { message } = useSelector((state) => state.rooms);
+  const { status, message } = useSelector((state) => state.rooms);
   const dispatch = useDispatch();
 
   const handleMessage = () => {
@@ -28,6 +29,10 @@ const DeleteRoomForm = () => {
     dispatch(deleteRoom(id));
     dispatch(PopRoom(id));
   };
+
+  if (status === 'loading') {
+    return <ProgressSpinner />;
+  }
 
   return (
     <main className={table.container}>

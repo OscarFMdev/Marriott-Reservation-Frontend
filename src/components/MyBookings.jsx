@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { ProgressSpinner } from 'primereact/progressspinner';
 import { fetchBookings, deleteBooking, popBook } from '../redux/reducer/reservation/reservationSlice';
 import { setMessageEmpty } from '../redux/reducer/Rooms/roomSlice';
 import mybookings from './componentsCss/TableStyles.module.css';
 
 const MyBookings = () => {
-  const { message, bookings } = useSelector((state) => state.reservations);
+  const { status, message, bookings } = useSelector((state) => state.reservations);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -31,6 +32,10 @@ const MyBookings = () => {
   useEffect(() => {
     handleMessage();
   }, [message]);
+
+  if (status === 'loading') {
+    return <ProgressSpinner />;
+  }
 
   return (
     <main className={mybookings.container}>

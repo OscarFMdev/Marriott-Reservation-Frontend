@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASEURL = 'http://127.0.0.1:3000/api/v1';
+const BASEURL = 'https://marriott-reservation.onrender.com/api/v1';
 
 const initialState = {
   rooms: [],

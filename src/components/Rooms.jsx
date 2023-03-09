@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux';
+import { ProgressSpinner } from 'primereact/progressspinner';
 import Carousel from './Carousel';
 import stl from './componentsCss/Carousel.module.css';
 
 const Rooms = () => {
   const rooms = useSelector((state) => state.rooms);
 
-  if (rooms.loading) {
-    return <i className="pi pi-spin pi-spinner" style={{ fontSize: '4rem' }} />;
+  if (rooms.status === 'loading') {
+    return <ProgressSpinner />;
   }
   return (
     <div className={stl.room_container}>
