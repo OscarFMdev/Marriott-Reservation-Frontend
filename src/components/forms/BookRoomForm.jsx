@@ -42,7 +42,7 @@ function ReservationForm() {
   };
 
   const handleNavigation = () => {
-    if (message === 'Room Booked Successfully') window.location.href = '/mybookings';
+    if (message === 'Room Booked Successfully') window.location.href = 'https://marriott-reservation.netlify.app/mybookings';
   };
 
   useEffect(() => {

@@ -34,7 +34,7 @@ const MyBookings = () => {
   }, [message]);
 
   if (status === 'loading') {
-    return <ProgressSpinner />;
+    return <ProgressSpinner className='progressSpinner' />;
   }
 
   return (

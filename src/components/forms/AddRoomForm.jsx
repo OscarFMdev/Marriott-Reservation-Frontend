@@ -35,7 +35,7 @@ const AddRoomForm = () => {
 
   const handleNavigation = () => {
     setTimeout(() => {
-      if (message === 'Room Created Successfully') window.location.href = '/Rooms';
+      if (message === 'Room Created Successfully') window.location.href = 'https://marriott-reservation.netlify.app/rooms';
     }, 3000);
   };
 

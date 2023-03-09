@@ -20,12 +20,16 @@
   background-color: white;
 }
 
+.progressSpinner {
+  margin-top: 40vh;
+}
+
 @media (min-width: 800px) {
   .container {
     display: flex;
     width: 100vw;
   }
-
+  
   .sidebar {
     width: 20vw;
     background-color: #ccc;
