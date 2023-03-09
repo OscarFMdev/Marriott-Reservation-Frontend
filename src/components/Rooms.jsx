@@ -7,7 +7,7 @@ const Rooms = () => {
   const rooms = useSelector((state) => state.rooms);
 
   if (rooms.status === 'loading') {
-    return <ProgressSpinner className='progressSpinner' />;
+    return <ProgressSpinner className="progressSpinner" />;
   }
   return (
     <div className={stl.room_container}>

@@ -31,7 +31,7 @@ const DeleteRoomForm = () => {
   };
 
   if (status === 'loading') {
-    return <ProgressSpinner className='progressSpinner' />;
+    return <ProgressSpinner className="progressSpinner" />;
   }
 
   return (
