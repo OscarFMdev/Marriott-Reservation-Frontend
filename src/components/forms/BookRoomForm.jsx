@@ -94,20 +94,25 @@ function ReservationForm() {
           </select>
         </div>
         <div className={form.fieldBook}>
-          <label htmlFor="startDate">
+          <label htmlFor="startDate" className={form.label}>
+            Start date
+            <br />
             <input
               type="date"
               id="startDate"
               name="startDate"
               value={formData.startDate}
               onChange={handleInputChange}
+              placeholder="Start Date"
               required
             />
           </label>
         </div>
         <div className={form.last}>
           <div className={form.fieldBook}>
-            <label htmlFor="endDate">
+            <label htmlFor="endDate" className={form.label}>
+              End date
+              <br />
               <input
                 type="date"
                 id="endDate"

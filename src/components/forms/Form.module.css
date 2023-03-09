@@ -18,6 +18,11 @@
   position: relative;
 }
 
+.label {
+  text-align: left;
+  font-size: 14px;
+}
+
 .success {
   background: var(--blue);
   width: 100vw;
